@@ -1,2 +1,23 @@
-<h1>Session#new</h1>
-<p>Find me in app/views/session/new.html.erb</p>
+<h1> Login or Register Now</h1>
+<h2> This application is only usable for registered users</h2>
+<%= form_with url: login_path, model:@user, method: :post do |form| %>
+  <div>
+    <%= form.label :username %><br>
+    <%= form.text_field :username %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :password %><br>
+    <%= form.password_field :password %>
+  </div>
+  <br>
+  <div>
+    <%= form.submit "Login" %>
+    <%= link_to "Register now", new_user_path, method: :get %>
+
+  </div>
+<% end %>
+
+
+
+

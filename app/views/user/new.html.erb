@@ -1,2 +1,23 @@
-<h1>User#new</h1>
-<p>Find me in app/views/user/new.html.erb</p>
+
+<h1> Sign up</h1>
+<%= form_with url:register_path, model:@user do |form| %>
+  <div>
+    <%= form.label :username %><br>
+    <%= form.text_field :username %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :password %><br>
+    <%= form.password_field :password %>
+  </div>
+  <div>
+    <%= form.label :password_confirmation %><br>
+    <%= form.password_field :password_confirmation %>
+  </div>
+  <br>
+  <div>
+    <%= form.submit "Register now" %>
+    <%= link_to "Back to Login", new_session_path, method: :get  %>
+  </div>
+
+<% end %>

@@ -27,13 +27,13 @@ Things you may want to cover:
 # Timetables
 ## Florian Drucker
 
-|     Date      |          Description           | From  |  To   |
-|:-------------:|:------------------------------:|:-----:|:-----:|
-|    09.04.     | inital model,view and db setup | 12:15 | 14:00 |
-|   |                        |    |    |
-|   |                        |    |    |
-|   |                        |    |    |
-|   |                        |    |    |
-|   |                        |    |    |
+|  Date  |                                           Description                                            | From  |  To   |
+|:------:|:------------------------------------------------------------------------------------------------:|:-----:|:-----:|
+| 09.04. |                           initial model,view and db setup (with seeds)                           | 12:15 | 14:00 |
+| 09.04. | user registration, session management, simple user homepage, flash display in application layout | 14:35 | 16:25 |
+|        |                                                                                                  |       |       |
+|        |                                                                                                  |       |       |
+|        |                                                                                                  |       |       |
+|        |                                                                                                  |       |       |
 
 ## Michael Winkler
