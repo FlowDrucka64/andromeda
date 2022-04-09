@@ -1,0 +1,2 @@
+class ThesisFavourite < ApplicationRecord
+end

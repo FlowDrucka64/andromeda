@@ -22,3 +22,18 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+# Timetables
+## Florian Drucker
+
+|     Date      |          Description           | From  |  To   |
+|:-------------:|:------------------------------:|:-----:|:-----:|
+|    09.04.     | inital model,view and db setup | 12:15 | 14:00 |
+|   |                        |    |    |
+|   |                        |    |    |
+|   |                        |    |    |
+|   |                        |    |    |
+|   |                        |    |    |
+
+## Michael Winkler

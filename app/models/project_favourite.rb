@@ -1,0 +1,2 @@
+class ProjectFavourite < ApplicationRecord
+end
