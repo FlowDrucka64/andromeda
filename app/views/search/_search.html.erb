@@ -1,0 +1,23 @@
+<%= form_tag(staff_search_url, method: :get) do %>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+
+<% if not @results.empty? %>
+  <% @results.each do |r| %>
+    <ul>
+      <li>
+        <%= render 'result', result: r %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <ul>
+    Sorry no results yet!
+  </ul>
+<% end %>
+<br>
+<%= link_to "Show Favourites", "favourites" %>
+<%= link_to "Return to Main Menu", current_user %>
+
