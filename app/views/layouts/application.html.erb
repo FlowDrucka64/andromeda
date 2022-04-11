@@ -13,8 +13,8 @@
   <body>
   <header>
     <% if session[:user_id] %>
-      <%= link_to "Home", current_user %>
-      <%= button_to "Logout",logout_path , method: :delete%>
+      <%= link_to "[Home]", current_user %>
+      <%= link_to "[Logout]",logout_path , method: :delete%>
     <% end %>
   </header>
     <% flash.each do |type, msg| %>
