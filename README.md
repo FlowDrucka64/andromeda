@@ -33,7 +33,7 @@ Things you may want to cover:
 | 09.04. |        user registration, session management, simple user homepage, flash display in application layout         | 14:35 | 16:25 |
 | 10.04. | search controller (parent) and children (staff, course, project, thesis) <br/>partials for all searches/results | 14:06 | 17:30 |
 | 11.04  |                                            alignment with colleague                                             | 16:15 | 17:15 |
-| 20.04  |                                     Staff search (api pull + result pages)                                      | 17:21 |       |
+| 20.04  |                                     Staff search (api pull + result pages)                                      | 17:21 | 20:32 |
 |        |                                                                                                                 |       |       |
 |        |                                                                                                                 |       |       |
 
