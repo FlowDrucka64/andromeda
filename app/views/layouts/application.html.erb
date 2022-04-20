@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
   </head>
 
   <body>
@@ -15,6 +16,7 @@
     <% if session[:user_id] %>
       <%= link_to "[Home]", current_user %>
       <%= link_to "[Logout]",logout_path , method: :delete%>
+      <%= link_to "Delete", logout_path, method: :delete, data: { confirm: "Really?" } %>
     <% end %>
   </header>
     <% flash.each do |type, msg| %>
@@ -23,7 +25,6 @@
         <%= msg %>
         <br>
       </div>
-
     <% end %>
 
     <%= yield %>

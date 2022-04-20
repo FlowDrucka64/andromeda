@@ -1,22 +1,55 @@
 <%= form_tag(staff_search_url, method: :get) do %>
-  <%= text_field_tag(:search, params[:search]) %>
+  <%= text_field_tag(:q, params[:q]) %>
+  <%= hidden_field_tag :p, 1 %>
   <div class="center"><%= submit_tag("Search") %></div>
 <% end %>
 
 
 <% if not @results.empty? %>
-  <% @results.each do |r| %>
+  <h2>
+    <%= @results["total_results"] %> total result<%= @results["total_results"] > 1 ? "s" : "" %>!
+  </h2>
+
+
+  <% if @results["total_results"] > 60 %>
+    <h3>
+      To save some traffic I'll only show you <%= @results["results"].length %> results tho :)
+    </h3>
+  <% end %>
+
+
+  <% @results["result_slice"].each do |r| %>
     <ul>
       <li>
-        <%= render 'result', result: r %>
+        <%= render 'search_result', result: r %>
       </li>
     </ul>
   <% end %>
+
+
+
+  <% if @results["total_results"] > 20 %>
+    <tr>
+      <% if params[:p].to_i > 1 %>
+        <%= link_to "[Previous]", staff_search_url(q: params[:q], p: params[:p].to_i - 1) %>
+      <% end %>
+      <% for i in 1..@results["page_count"] do %>
+        <%= link_to "[Page #{i}]", staff_search_url(q: params[:q], p: i) %>
+      <% end %>
+      <% if params[:p].to_i < @results["page_count"] %>
+        <%= link_to "[Next]", staff_search_url(q: params[:q], p: params[:p].to_i + 1) %>
+      <% end %>
+
+    </tr>
+  <% end %>
+
+
 <% else %>
   <ul>
     Sorry no results yet!
   </ul>
 <% end %>
+
 <br>
 <%= link_to "[Show Favourites]", "favourites" %>
 <%= link_to "[Return to Main Menu]", current_user %>
