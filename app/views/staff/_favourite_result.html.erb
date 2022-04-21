@@ -1,0 +1,18 @@
+<h2>
+  <%= favourite["first_name"] %>
+  <%= favourite["last_name"] %>
+</h2>
+
+<h3>
+  <%= favourite["notes"] %>
+</h3>
+<h4>
+  <%= favourite["keywords"] %>
+</h4>
+
+<h2>
+  <%= link_to "[Details]", staff_detail_url(favourite["tiss_id"]) %>
+  <%= link_to "[Edit]" %>
+  <%= link_to "[Remove]" %>
+</h2>
+

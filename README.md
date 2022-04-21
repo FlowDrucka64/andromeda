@@ -86,7 +86,7 @@ https://tiss.tuwien.ac.at/api/dokumentation
 | 11.04  |                                            alignment with colleague                                             | 16:15 | 17:15 |
 | 20.04  |                                     Staff search (api pull + result pages)                                      | 17:21 | 20:32 |
 | 21.04  |                                            Caching of api responses                                             | 11:03 | 12:15 |
-|        |                                                                                                                 |       |       |
+| 21.04  |                                         Staff favourite fetch + render                                          | 15:10 | 17:37 |
 
 ## Michael Winkler
 

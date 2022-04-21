@@ -11,7 +11,7 @@
   </h2>
 
 
-  <% if @results["total_results"] > 60 %>
+  <% if @results["total_results"] > MAX_HITS %>
     <h3>
       To save some traffic I'll only show you <%= @results["results"].length %> results tho :)
     </h3>
@@ -51,6 +51,6 @@
 
 
 <br>
-<%= link_to "[Show Favourites]", "favourites" %>
+<%= link_to "[Show Favourites]", "favourites?p=1" %>
 <%= link_to "[Return to Main Menu]", current_user %>
 

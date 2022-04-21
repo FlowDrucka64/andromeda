@@ -1,0 +1,40 @@
+<% if not @favourites.empty? %>
+  <h2>
+    <%= @favourites["objects"].length %> favourite<%= @favourites["objects"].length > 1 ? "s" : "" %> found !
+  </h2>
+
+  <ul>
+    <% @favourites["slice"].each do |f| %>
+      <li>
+        <%= render 'favourite_result', favourite: f %>
+      </li>
+    <% end %>
+  </ul>
+
+  <% if @favourites["objects"].length > PAGE_ENTRY_COUNT %>
+    <tr>
+      <% if params[:p].to_i > 1 %>
+        <%= link_to "[Previous]", staff_favourites_url(p: params[:p].to_i - 1) %>
+      <% end %>
+      <% for i in 1..@favourites["page_count"] do %>
+        <%= link_to "[Page #{i}]", staff_favourites_url(p: i) %>
+      <% end %>
+      <% if params[:p].to_i < @favourites["page_count"] %>
+        <%= link_to "[Next]", staff_favourites_url(p: params[:p].to_i + 1) %>
+      <% end %>
+    </tr>
+  <% end %>
+
+
+<% else %>
+  <ul>
+    Sorry no results yet!
+  </ul>
+<% end %>
+
+
+
+
+<br>
+<%= link_to "[Staff search]", "search" %>
+<%= link_to "[Return to Main Menu]", current_user %>

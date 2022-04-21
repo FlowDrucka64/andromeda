@@ -10,12 +10,12 @@ User.create(username: "root", password: "1234")
 User.create(username: "dummy", password: "2345")
 User.create(username: "debug", password: "3456")
 
-StaffFavourite.create(user_id: 1, staff_id: 121, notes: "seeded entry #1", keywords: "seed #2")
-StaffFavourite.create(user_id: 1, staff_id: 122, notes: "seeded entry #2", keywords: "seed #2")
-StaffFavourite.create(user_id: 1, staff_id: 123, notes: "seeded entry #3", keywords: "seed #3")
+StaffFavourite.create(user_id: 1, staff_id: 41208, notes: "seeded entry #1", keywords: "seed #2")
+StaffFavourite.create(user_id: 1, staff_id: 40595, notes: "seeded entry #2", keywords: "seed #2")
+StaffFavourite.create(user_id: 1, staff_id: 41610, notes: "seeded entry #3", keywords: "seed #3")
 
-StaffFavourite.create(user_id: 2, staff_id: 105, notes: "seeded entry", keywords: "seed")
-StaffFavourite.create(user_id: 3, staff_id: 121, notes: "seeded entry", keywords: "seed")
+StaffFavourite.create(user_id: 2, staff_id: 40954, notes: "seeded entry", keywords: "seed")
+StaffFavourite.create(user_id: 3, staff_id: 166114, notes: "seeded entry", keywords: "seed")
 
 CourseFavourite.create(user_id: 1, course_number: 188081, dsw_id: 7728, dsr_id: 814, semester: "2021W", notes: "seed entry", keywords: "seed")
 CourseFavourite.create(user_id: 2, course_number: 194104, dsw_id: 7728, dsr_id: 513, semester: "2022S", notes: "seed entry", keywords: "seed")
