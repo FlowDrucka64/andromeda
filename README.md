@@ -23,8 +23,16 @@ Things you may want to cover:
 
 * ...
 
+# API doc
+
+https://tiss.tuwien.ac.at/api/dokumentation
+
+# Caching
+
+Toggle caching in dev environment: `rails dev:cache`
 
 # Timetables
+
 ## Florian Drucker
 
 |  Date  |                                                   Description                                                   | From  |  To   |
@@ -34,7 +42,7 @@ Things you may want to cover:
 | 10.04. | search controller (parent) and children (staff, course, project, thesis) <br/>partials for all searches/results | 14:06 | 17:30 |
 | 11.04  |                                            alignment with colleague                                             | 16:15 | 17:15 |
 | 20.04  |                                     Staff search (api pull + result pages)                                      | 17:21 | 20:32 |
-|        |                                                                                                                 |       |       |
+| 21.04  |                                            Caching of api responses                                             | 11:03 | 12:15 |
 |        |                                                                                                                 |       |       |
 
 ## Michael Winkler

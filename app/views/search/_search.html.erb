@@ -28,7 +28,7 @@
 
 
 
-  <% if @results["total_results"] > 20 %>
+  <% if @results["total_results"] > PAGE_ENTRY_COUNT %>
     <tr>
       <% if params[:p].to_i > 1 %>
         <%= link_to "[Previous]", staff_search_url(q: params[:q], p: params[:p].to_i - 1) %>
@@ -49,6 +49,9 @@
     Sorry no results yet!
   </ul>
 <% end %>
+
+
+
 
 <br>
 <%= link_to "[Show Favourites]", "favourites" %>
