@@ -1,6 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
+<!--- This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
@@ -21,15 +21,58 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* ... --->
 
-# API doc
+# Student Data
+Names: Michael Winkler, Florian Drucker
+
+Student Numbers: 11809940, 11808253
+
+Program Numbers: UE 033 534, UE 033 534
+
+Project Name: andromeda
+
+
+# Project Details
+
+Ruby Version: 3.0.3
+
+Rails Version: 7.0.1
+
+
+# Setup
+
+## Setup Database
+
+```sh
+rake db:migrate
+```
+
+## Enable Caching
+
+Toggle api result caching in dev environment:
+```sh
+rails dev:cache
+```
+
+# Other
+
+## Reset DB
+```sh
+rake db:reset
+```
+
+
+# Architecture
+
+TODO
+
+
+# TISS API doc
 
 https://tiss.tuwien.ac.at/api/dokumentation
 
-# Caching
 
-Toggle caching in dev environment: `rails dev:cache`
 
 # Timetables
 
@@ -46,3 +89,15 @@ Toggle caching in dev environment: `rails dev:cache`
 |        |                                                                                                                 |       |       |
 
 ## Michael Winkler
+
+|     Date     |                                       Task                                        | Amount |
+|:------------:|:---------------------------------------------------------------------------------:|:------:|
+|  31.03.2022  |   Setup Ruby on Rails on Windows 10 WSL - https://gorails.com/setup/windows/10    |   1h   |
+|  02.04.2022  | Work through Rails tutorial - https://guides.rubyonrails.org/getting_started.html |   2h   |
+|  04.04.2022  |                               Stylesheet - Research                               |   1h   |
+|  06.04.2022  |                         Stylesheet - First basic version                          |  1.5h  |
+|  11.04.2022  |                             Alignment with Colleague                              |   1h   |
+|  11.04.2022  |                             Stylesheet - Improvement                              |   2h   |
+|  21.04.2022  |                             Alignment with Colleague                              |   1h   |
+|  21.04.2022  |                          Detail View for search results                           |  2.5h  |
+|              |                                        SUM                                        |  12h   |

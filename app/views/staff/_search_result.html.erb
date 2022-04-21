@@ -1,4 +1,4 @@
 <%= result["first_name"] %>
-<%= result["last_name"] %>
-<%= link_to "[Details]" %>
+<%= result["last_name"] %><br>
+<%= link_to "[Details]", staff_detail_url(result["tiss_id"])%>
 <%= link_to "[Add to Favourites]" %>

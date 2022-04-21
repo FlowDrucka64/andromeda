@@ -1,0 +1,19 @@
+<h1>Person details</h1>
+
+<h3><%= @result["preceding_titles"] %></h3>
+<h2><%= @result["first_name"] %> <%= @result["last_name"] %></h2>
+<h3><%= @result["postpositioned_titles"] %></h3>
+<% unless @result["picture_uri"].nil? %>
+  <img src="<%= BASE_URL %><%= @result["picture_uri"] %>">
+<% end %>
+<div class="details">
+<p>Gender: <%= @result["gender"] %></p>
+<p>Main phone number: <%= @result["main_phone_number"] %></p>
+<p>Main email: <%= @result["main_email"] %></p>
+</div>
+<div class="block">
+<%= link_to "[Courses]" %>
+<%= link_to "[Projects]" %>
+<%= link_to "[Theses]" %>
+<%= link_to "[Add to Favourites]" %>
+</div>

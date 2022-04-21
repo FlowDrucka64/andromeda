@@ -7,4 +7,7 @@ class BaseController < ApplicationController
 
   def favourites
   end
+
+  def detail
+  end
 end

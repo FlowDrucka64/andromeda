@@ -8,6 +8,11 @@ class StaffController < BaseController
     end
   end
 
+
+  def detail
+    @result = api_detail(params[:id])
+  end
+
   private
 
   def api_search(search_term)
@@ -17,9 +22,15 @@ class StaffController < BaseController
     end
   end
 
+  def api_detail(id)
+    url = BASE_API_URL + STAFF_DETAIL_URI + id.to_s
+    return JSON.parse Excon.get(url).body
+  end
+
   def search_transform(response)
     response["page_count"] = (response["results"].length / PAGE_ENTRY_COUNT).to_f.ceil.to_i #calculate how much result pages are needed
     return response
   end
+
 
 end

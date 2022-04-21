@@ -15,6 +15,21 @@ a:hover{
     text-decoration: none; /* no underline */
 }
 
+img {
+    width: 30%;
+    height: auto;
+    float: left;
+    padding: 10px 10px 10px 10px;
+}
+
+div.details{
+    float: left;
+}
+
+div.block{
+    display: inline-block;
+}
+
 input[type=text]{
     width: 100%;
 }
