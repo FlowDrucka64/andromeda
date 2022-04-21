@@ -1,4 +1,4 @@
-class StaffController < SearchController
+class StaffController < BaseController
 
   def search
     @results = []
@@ -11,7 +11,7 @@ class StaffController < SearchController
   private
 
   def api_search(search_term)
-    url = BASE_API_URL + STAFF_SEARCH_URI + search_term.to_s + "&max_treffer=" + MAX_HITS
+    url = BASE_API_URL + STAFF_SEARCH_URI + search_term.to_s + "&max_treffer=" + MAX_HITS.to_s
     return Rails.cache.fetch(search_term, expires_in: 12.hours) do
       search_transform(JSON.parse Excon.get(url).body) #executed on cache miss
     end

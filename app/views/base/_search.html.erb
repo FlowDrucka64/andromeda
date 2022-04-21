@@ -17,15 +17,13 @@
     </h3>
   <% end %>
 
-
-  <% @results["result_slice"].each do |r| %>
-    <ul>
+  <ul>
+    <% @results["result_slice"].each do |r| %>
       <li>
         <%= render 'search_result', result: r %>
       </li>
-    </ul>
-  <% end %>
-
+    <% end %>
+  </ul>
 
 
   <% if @results["total_results"] > PAGE_ENTRY_COUNT %>
@@ -39,7 +37,6 @@
       <% if params[:p].to_i < @results["page_count"] %>
         <%= link_to "[Next]", staff_search_url(q: params[:q], p: params[:p].to_i + 1) %>
       <% end %>
-
     </tr>
   <% end %>
 
