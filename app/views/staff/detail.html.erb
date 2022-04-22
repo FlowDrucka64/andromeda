@@ -10,10 +10,22 @@
 <p>Gender: <%= @result["gender"] %></p>
 <p>Main phone number: <%= @result["main_phone_number"] %></p>
 <p>Main email: <%= @result["main_email"] %></p>
+  <% if is_favourite(@result["tiss_id"]) %>
+    <br>
+    <p>Favourites data:</p>
+    <p>Notes: <%= get_favourite_data(@result["tiss_id"])["notes"] %></p>
+    <p>Keywords: <%= get_favourite_data(@result["tiss_id"])["keywords"] %></p>
+  <% end %>
 </div>
 <div class="block">
 <%= link_to "[Courses]" %>
 <%= link_to "[Projects]" %>
 <%= link_to "[Theses]" %>
-<%= link_to "[Add to Favourites]" %>
+  <% unless is_favourite(@result["tiss_id"]) %>
+    <%= form_tag(staff_create_path, method: :post) do %>
+      <%= hidden_field_tag(:id, @result["tiss_id"]) %>
+      <%= hidden_field_tag(:name, @result["first_name"] + " " + @result["last_name"]) %>
+      <%= submit_tag("[Add to Favourites]") %>
+    <% end %>
+    <% end %>
 </div>

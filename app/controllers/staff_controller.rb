@@ -52,6 +52,7 @@ class StaffController < BaseController
   end
 
   helper_method :is_favourite
+  helper_method :get_favourite_data
 
   private
 
@@ -60,6 +61,13 @@ class StaffController < BaseController
       return true if f["staff_id"] == tiss_id
     end
     return false
+  end
+
+  def get_favourite_data(tiss_id)
+    current_user.staff_favourites.each do |f|
+      return f if f["staff_id"] == tiss_id
+    end
+    return nil
   end
 
   def api_search(search_term)
