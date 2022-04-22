@@ -1,0 +1,2 @@
+module StaffFavouritesHelper
+end

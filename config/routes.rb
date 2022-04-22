@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   post "staff/query", to: "staff#query", as: "staff/query"
   get "staff/favourites", to: "staff#favourites", as: "staff/favourites"
   get "staff/detail/:id", to: "staff#detail", as: "staff/detail"
+  post "staff/create", to: "staff#create", as: "staff/create"
+  get "staff/edit", to: "staff#edit", as: "staff/edit"
+  post "staff/update", to: "staff#update", as: "staff/update"
+  get "staff/destroy", to: "staff#destroy", as: "staff/destroy"
 
   get "course/search", to: "course#search", as: "course/search"
   post "course/query", to: "course#query", as: "course/query"

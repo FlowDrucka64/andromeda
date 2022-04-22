@@ -12,7 +12,8 @@
 
 <h2>
   <%= link_to "[Details]", staff_detail_url(favourite["tiss_id"]) %>
-  <%= link_to "[Edit]" %>
-  <%= link_to "[Remove]" %>
+  <%= link_to "[Edit]", staff_edit_path(id: favourite["fav_id"]) %>
+  <%= link_to "[Remove]", staff_destroy_path(id: favourite["fav_id"]) %>
 </h2>
+
 

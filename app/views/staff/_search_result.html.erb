@@ -1,4 +1,13 @@
 <%= result["first_name"] %>
 <%= result["last_name"] %><br>
-<%= link_to "[Details]", staff_detail_url(result["tiss_id"])%>
-<%= link_to "[Add to Favourites]" %>
+<%= link_to "[Details]", staff_detail_url(result["tiss_id"]) %>
+<% unless is_favourite(result["tiss_id"]) %>
+  <%= form_tag(staff_create_path, method: :post) do %>
+    <%= hidden_field_tag(:id, result["tiss_id"]) %>
+    <%= hidden_field_tag(:name, result["first_name"] + " " + result["last_name"]) %>
+    <%= submit_tag("[Add to Favourites]") %>
+  <% end %>
+<% end %>
+
+
+

@@ -23,7 +23,22 @@ Things you may want to cover:
 
 * ... --->
 
+# TODOS
+
+Staff
+--------------
+
+1. Show more Details for favourites
+2. ~~Add favourite~~
+3. ~~Remove favourite~~
+4. ~~Edit favourite~~
+5. ~~Caching of single staff~~
+6. "Input validation" i.e. empty search results
+7. Edit favourite form could be done in "base_controller" (abstraction)
+8. Strong typing
+
 # Student Data
+
 Names: Michael Winkler, Florian Drucker
 
 Student Numbers: 11809940, 11808253
@@ -31,7 +46,6 @@ Student Numbers: 11809940, 11808253
 Program Numbers: UE 033 534, UE 033 534
 
 Project Name: andromeda
-
 
 # Project Details
 
@@ -87,6 +101,7 @@ https://tiss.tuwien.ac.at/api/dokumentation
 | 20.04  |                                     Staff search (api pull + result pages)                                      | 17:21 | 20:32 |
 | 21.04  |                                            Caching of api responses                                             | 11:03 | 12:15 |
 | 21.04  |                                         Staff favourite fetch + render                                          | 15:10 | 17:37 |
+| 21.04  |                                   Staff favourite cleanup / Add, edit, delete                                   | 13:26 | 16:06 |
 
 ## Michael Winkler
 

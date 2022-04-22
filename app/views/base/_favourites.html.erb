@@ -1,6 +1,10 @@
 <% if not @favourites.empty? %>
   <h2>
-    <%= @favourites["objects"].length %> favourite<%= @favourites["objects"].length > 1 ? "s" : "" %> found !
+    <% if @favourites["objects"].length > 0 %>
+      <%= @favourites["objects"].length %> favourite<%= @favourites["objects"].length > 1 ? "s" : "" %> found !
+    <% else %>
+      That's where I'd put my favourites... IF I HAD ANY
+    <% end %>
   </h2>
 
   <ul>
