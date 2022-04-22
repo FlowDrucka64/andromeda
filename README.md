@@ -116,5 +116,5 @@ https://tiss.tuwien.ac.at/api/dokumentation
 | 21.04.2022 |                             Alignment with Colleague                              |   1h   |
 | 21.04.2022 |                          Detail View for search results                           |  2.5h  |
 | 22.04.2022 |                             Alignment with Colleague                              |  0.5h  |
-| 22.04.2022 |                                         x                                         |  1.5h  |
+| 22.04.2022 |                      Adopt Detail View to support Favorites                       |  1.5h  |
 |            |                                        SUM                                        |  14h   |
