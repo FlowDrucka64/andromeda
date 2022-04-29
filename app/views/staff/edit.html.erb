@@ -1,5 +1,4 @@
-<h1> Edit notes and keywords
-  for <%= @favourites["objects"][params[:id].to_i - 1]["first_name"] + " " + @favourites["objects"][params[:id].to_i - 1]["last_name"] %></h1>
+<h1> Edit notes and keywords for <%= @fav_name %></h1>
 
 <%= form_with model: @favourite, url: staff_update_path(id: @favourite["id"]), method: :post do |form| %>
   <div>
