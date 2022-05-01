@@ -1,4 +1,4 @@
-# README
+# Andromeda README
 
 <!--- This README would normally document whatever steps are necessary to get the
 application up and running.
@@ -22,24 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ... --->
-
-# TODOS
-
-Staff
---------------
-
-1. ~~Show more Details for favourites~~
-2. ~~Add favourite~~
-3. ~~Remove favourite~~
-4. ~~Edit favourite~~
-5. ~~Caching of single staff~~
-6. ~~"Input validation" i.e. empty search results~~
-7. Edit favourite form could be done in "base_controller" (abstraction)
-8. Strong typing
-9. Complete Readme
-10. Remove "styling" from HTML files (<br> and such)
-11. Check the model classes (TODO)
-12. "Security" i.e. check what happens if "wrong" addresses are entered
 
 # Student Data
 
@@ -75,17 +57,26 @@ rails dev:cache
 
 # Other
 
-## Reset DB
+## Reset DB to seeded values
 ```sh
 rake db:reset
 ```
 
 
 # Architecture
+For the main functionallities
 
-TODO
+                                         application_controller
+                                                  |
+                                             base_controller
+                                         /     |       |        \
+                                staff_c.   thesis_c.  project_c.  course_c.
 
+For Session and User management
 
+                                            application_c.
+                                             /         \
+                                       session c.     user_c.
 # TISS API doc
 
 https://tiss.tuwien.ac.at/api/dokumentation
@@ -96,18 +87,18 @@ https://tiss.tuwien.ac.at/api/dokumentation
 
 ## Florian Drucker
 
-|  Date  |                                                   Description                                                   | From  |  To   |
-|:------:|:---------------------------------------------------------------------------------------------------------------:|:-----:|:-----:|
-| 09.04. |                                  initial model,view and db setup (with seeds)                                   | 12:15 | 14:00 |
-| 09.04. |        user registration, session management, simple user homepage, flash display in application layout         | 14:35 | 16:25 |
-| 10.04. | search controller (parent) and children (staff, course, project, thesis) <br/>partials for all searches/results | 14:06 | 17:30 |
-| 11.04  |                                            alignment with colleague                                             | 16:15 | 17:15 |
-| 20.04  |                                     Staff search (api pull + result pages)                                      | 17:21 | 20:32 |
-| 21.04  |                                            Caching of api responses                                             | 11:03 | 12:15 |
-| 21.04  |                                         Staff favourite fetch + render                                          | 15:10 | 17:37 |
-| 21.04  |                                   Staff favourite cleanup / Add, edit, delete                                   | 13:26 | 16:06 |
-| 30.04  |                                             Documentation, cleanup                                              | 21:12 | 22:51 |
-
+|  Date  |                                                   Description                                                   | Amount |
+|:------:|:---------------------------------------------------------------------------------------------------------------:|:------:|
+| 09.04. |                                  initial model,view and db setup (with seeds)                                   |  1:45  |
+| 09.04. |        user registration, session management, simple user homepage, flash display in application layout         |  1:50  |
+| 10.04. | search controller (parent) and children (staff, course, project, thesis) <br/>partials for all searches/results |  3:24  |
+| 11.04  |                                            alignment with colleague                                             |  1:00  |
+| 20.04  |                                     Staff search (api pull + result pages)                                      |  3:10  |
+| 21.04  |                                            Caching of api responses                                             |  1:10  |
+| 21.04  |                                         Staff favourite fetch + render                                          |  2:27  |
+| 21.04  |                                   Staff favourite cleanup / Add, edit, delete                                   |  2:42  |
+| 30.04  |                                             Documentation, cleanup                                              |  1:41  |
+|        |                                                       SUM                                                       | 19:05  |
 ## Michael Winkler
 
 |    Date     |                                       Task                                        | Amount |
