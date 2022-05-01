@@ -28,14 +28,18 @@ Things you may want to cover:
 Staff
 --------------
 
-1. Show more Details for favourites
+1. ~~Show more Details for favourites~~
 2. ~~Add favourite~~
 3. ~~Remove favourite~~
 4. ~~Edit favourite~~
 5. ~~Caching of single staff~~
-6. "Input validation" i.e. empty search results
+6. ~~"Input validation" i.e. empty search results~~
 7. Edit favourite form could be done in "base_controller" (abstraction)
 8. Strong typing
+9. Complete Readme
+10. Remove "styling" from HTML files (<br> and such)
+11. Check the model classes (TODO)
+12. "Security" i.e. check what happens if "wrong" addresses are entered
 
 # Student Data
 
@@ -102,6 +106,7 @@ https://tiss.tuwien.ac.at/api/dokumentation
 | 21.04  |                                            Caching of api responses                                             | 11:03 | 12:15 |
 | 21.04  |                                         Staff favourite fetch + render                                          | 15:10 | 17:37 |
 | 21.04  |                                   Staff favourite cleanup / Add, edit, delete                                   | 13:26 | 16:06 |
+| 30.04  |                                             Documentation, cleanup                                              | 21:12 | 22:51 |
 
 ## Michael Winkler
 

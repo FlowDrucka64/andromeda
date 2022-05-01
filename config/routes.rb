@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   resources :user, only: [:new, :create, :index, :show]
   resources :session, only: [:new, :create, :destroy]
 
+  #Session management
   post "login", to: "session#create", as: "login"
   post "register", to: "user#create", as: "register"
   get "logout", to: "session#destroy", as: "logout"
 
+  #Staff functionalities
   get "staff/search", to: "staff#search", as: "staff/search"
   post "staff/query", to: "staff#query", as: "staff/query"
   get "staff/favourites", to: "staff#favourites", as: "staff/favourites"
@@ -20,16 +22,19 @@ Rails.application.routes.draw do
   post "staff/update", to: "staff#update", as: "staff/update"
   get "staff/destroy", to: "staff#destroy", as: "staff/destroy"
 
+  #Course functionalities
   get "course/search", to: "course#search", as: "course/search"
   post "course/query", to: "course#query", as: "course/query"
   get "course/favourites", to: "course#favourites", as: "course/favourites"
   get "course/detail/:id", to: "course#detail", as: "course/detail"
 
+  #Project functionalities
   get "project/search", to: "project#search", as: "project/search"
   post "project/query", to: "project#query", as: "project/query"
   get "project/favourites", to: "project#favourites", as: "project/favourites"
   get "project/detail/:id", to: "project#detail", as: "project/detail"
 
+  #Thesis functionalities
   get "thesis/search", to: "thesis#search", as: "thesis/search"
   post "thesis/query", to: "thesis#query", as: "thesis/query"
   get "thesis/favourites", to: "thesis#favourites", as: "thesis/favourites"

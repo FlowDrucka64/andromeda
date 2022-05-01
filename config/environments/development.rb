@@ -11,6 +11,7 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  #add network mask of my WSL
   config.web_console.whitelisted_ips = '172.0.0.0/8'
 
   # Show full error reports.
