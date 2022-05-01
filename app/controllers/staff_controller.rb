@@ -2,23 +2,6 @@
 # "extending" from the BaseController
 class StaffController < BaseController
 
-  # Staff search
-  # The search term is used in the TISS API pull
-  def search
-    @results = []
-    unless params[:q].blank?
-      @results = api_search(params[:q])
-      # "calculation" of the results to display on the current page of the results
-      @results["result_slice"] = @results["results"].slice(PAGE_ENTRY_COUNT * (params[:p].to_i - 1), PAGE_ENTRY_COUNT)
-    end
-  end
-
-
-  # Showing details (api-fetched) for a staff-member given by id in params
-  def detail
-    @result = api_fetch(params[:id])
-  end
-
   # Showing the current user's favourites
   def favourites
     @favourites = load_favourite_bundle(current_user.staff_favourites)
