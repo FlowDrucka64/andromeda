@@ -5,7 +5,7 @@
   <%= form_tag(staff_create_path, method: :post) do %>
     <%= hidden_field_tag(:id, result["tiss_id"]) %>
     <%= hidden_field_tag(:name, result["first_name"] + " " + result["last_name"]) %>
-    <%= submit_tag("[Add to Favourites]") %>
+    <%= submit_tag("[Add to Favourites]",:class => "link") %>
   <% end %>
 <% end %>
 

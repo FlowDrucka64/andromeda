@@ -54,6 +54,30 @@ input[type=submit]:hover{
     background-color: olive;
 }
 
+input[type=submit].link {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: yellowgreen;
+    text-decoration: none; /* no underline */
+    cursor: pointer;
+}
+
+input[type=submit].link:hover {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: olive;
+    text-decoration: none; /* no underline */
+    cursor: pointer;
+}
+
 @media screen and (min-width: 1200px) {
     body {
         margin: auto;
