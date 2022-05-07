@@ -53,6 +53,16 @@ class StaffController < BaseController
 
   private
 
+  # override of base_controller
+  def fetch_url
+    return BASE_API_URL + STAFF_FETCH_URI
+  end
+
+  # override of base_controller
+  def search_url
+    return BASE_API_URL + STAFF_FETCH_URI
+  end
+
   # checks if the staff member with given tiss_id is a favourite of the current user
   def is_favourite(tiss_id)
     current_user.staff_favourites.each do |f|
@@ -69,49 +79,6 @@ class StaffController < BaseController
     return nil
   end
 
-  # API pull to the tiss api for given searchterm with max_treffer= MAX_HITS
-  def api_search(search_term)
-    url = BASE_API_URL + STAFF_SEARCH_URI + search_term.to_s + "&max_treffer=" + MAX_HITS.to_s
-    return Rails.cache.fetch(search_term, expires_in: 12.hours) do
-      search_transform(JSON.parse Excon.get(url).body) #executed on cache miss
-    end
-  end
-
-  # adds the information of the needed page_count to the object
-  def search_transform(response)
-    response["page_count"] = (response["results"].length.to_f / PAGE_ENTRY_COUNT).ceil.to_i #calculate how much result pages are needed
-    return response
-  end
-
-  # bundle up information pulled from API with persisted information for given favourite
-  # slices the first PAGE_ENTRY_COUNT objects and stores it in "slice" (for rendering of the first result page)
-  # calculates how many pages are needed to show all results given PAGE_ENTRY_COUNT
-  def load_favourite_bundle(favourites)
-    fav_bundle = { "objects" => [], "slice" => [], "page_count" => -1 }
-    favourites.each do |f|
-      fav_bundle["objects"].push(create_fav_object(f))
-    end
-    fav_bundle["page_count"] = (fav_bundle["objects"].length.to_f / PAGE_ENTRY_COUNT).ceil.to_i #calculate how much pages are needed to display the favourites
-    return fav_bundle
-  end
-
-  # Combines the API-fetched object with according persisted information
-  def create_fav_object(favourite)
-    obj = api_fetch(favourite.staff_id)
-    obj["fav_id"] = favourite.id
-    obj["notes"] = favourite.notes
-    obj["keywords"] = favourite.keywords
-    return obj
-  end
-
-  # Fetch a staff member with tiss_id from TISS API
-  def api_fetch(tiss_id)
-    url = BASE_API_URL + STAFF_FETCH_URI + tiss_id.to_s
-    return Rails.cache.fetch(tiss_id, expires_in: 12.hours) do
-      JSON.parse Excon.get(url).body #executed on cache miss
-    end
-  end
-
   # helper for displaying the name of a favourite given the database id of it
   def get_fav_name(fav_id)
     ret = "Name not found"
@@ -122,6 +89,7 @@ class StaffController < BaseController
     end
     ret
   end
+
 
   # Strong typing for edit form
   def favourite_params
