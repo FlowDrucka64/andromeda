@@ -1,0 +1,121 @@
+<course>
+    <courseNumber>186141</courseNumber>
+    <semesterCode>2022S</semesterCode>
+    <courseType>VO</courseType>
+    <title>
+        <ns2:de>Informationsvisualisierung</ns2:de>
+        <ns2:en>Information Visualization</ns2:en>
+    </title>
+    <objective>
+        <ns2:de>&lt;p&gt;Multimediale Darstellung von Daten, Informationen und Wissen, Methoden der Visualisierung von
+            heterogenen Daten und Information, Dynamische und Interaktive Techniken, Knowledge Crystallization,
+            Kognitive Grundlagen&lt;/p&gt;
+        </ns2:de>
+        <ns2:en>&lt;p&gt;Multimedial representation of data, informaton and knowledge, methods to visualize
+            heterogeneous data and information, dynamic and interactive techniques, knowledge crystallization, cognitive
+            basics.&lt;/p&gt;
+        </ns2:en>
+    </objective>
+    <teachingContent>
+        <ns2:de>&lt;p&gt;Informationsvisualisierung umfasst die Verwendung computergestüzter, interaktiver, visueller
+            Repräsentationen von abstrakten Daten zur Verstärkung des Erkenntnisgewinns. Die Studenten sollen sich mit
+            den Konzepten und Techniken der Informationsvisualisierung vertraut machen. Nach einer allgemeinen
+            Einführung in Visualisierung werden aktuelle Forschungsergebnisse in dem Bereich vorgestellt. Die Themen
+            umfassen unter anderem:&amp;nbsp;&lt;/p&gt;
+            &lt;ul&gt;
+            &lt;li&gt;&lt;span&gt;Data &amp;amp; Visual Encodings&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;span&gt;Visual &amp;amp; Perceptual Principles&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;span&gt;Multivariate &amp;amp; High-Dimensional Data Visualization&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;span&gt;Multivariate Network Visualization&amp;nbsp;&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;Scalable Visualization for Big Data&lt;/li&gt;
+            &lt;li&gt;Explainable AI&lt;/li&gt;
+            &lt;li&gt;Anwendungen der Visualisierung, z.B. im Bereich der Biologie oder Motorenbau&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;p&gt;Es gibt eine begleitende Übung zur Vorlesung.&amp;nbsp;&lt;/p&gt;
+            &lt;p&gt;Didaktisches Vorgehen: Mittels elektronischer Folien wird eine Einführung zur
+            Informationsvisualisierung geboten. (Internationale) Fachkollegen halten Gastvorträge zu aktuellen
+            Spezialthemen.&amp;nbsp;&lt;/p&gt;
+            &lt;p&gt;Die Zoom-Links zu den Vorlesungen, die Aufzeichnungen und alle Vorlesungsmaterialien befinden sich
+            in TUWEL. Vorlesungen finden immer &lt;strong&gt;Mittwoch um 15:00 (c.t.)&lt;/strong&gt; statt.&amp;nbsp;&lt;/p&gt;
+        </ns2:de>
+        <ns2:en>&lt;p&gt;Information visualization is "the use of computer-supported, interactive, visual
+            representations of abstract data to amplify cognition". The participants shall get acquainted to the
+            concepts and techniques of information visualization. A short general introduction to visualization is
+            followed by presentations of current research results in the field. The topics include:&amp;nbsp;&lt;/p&gt;
+            &lt;ul&gt;
+            &lt;li&gt;Data &amp;amp; Visual Encodings&lt;/li&gt;
+            &lt;li&gt;Visual &amp;amp; Perceptual Principles&lt;/li&gt;
+            &lt;li&gt;Multivariate &amp;amp; High-Dimensional Data Visualization&lt;/li&gt;
+            &lt;li&gt;Multivariate Network Visualization&amp;nbsp;&lt;/li&gt;
+            &lt;li&gt;Scalable Visualization for Big Data&lt;/li&gt;
+            &lt;li&gt;Explainable AI&lt;/li&gt;
+            &lt;li&gt;Applications of visualization, e.g., for biology or engineering&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;p&gt;There is an exercise accompanying the lecture.&amp;nbsp;&lt;/p&gt;
+            &lt;p&gt;Didactical Approach: With slides, an introduction to information visualization is given.
+            (International) colleagues give guest lectures concerning current special topics.&amp;nbsp;&lt;/p&gt;
+            &lt;p&gt;Zoom links to the lectures, lecture recordings, and all lecture materials can be found on TUWEL.
+            Lectures take place &lt;strong&gt;Wednesdays 3 p.m. (c.t.)&lt;/strong&gt;.&amp;nbsp;&lt;/p&gt;
+        </ns2:en>
+    </teachingContent>
+    <additionalInformation>
+        <ns2:de>&lt;p&gt;ECTS Breakdown: 3 ECTS = 75 Stunden&lt;/p&gt;
+            &lt;ul&gt;
+            &lt;li&gt;Vorlesung: 30 Stunden&lt;/li&gt;
+            &lt;li&gt;Gastvorträge: 20 Stunden&lt;/li&gt;
+            &lt;li&gt;Prüfungsvorbereitung: 25 Stunden&lt;/li&gt;
+            &lt;/ul&gt;
+        </ns2:de>
+        <ns2:en>&lt;p&gt;ECTS Breakdown: 3 ECTS = 75 Stunden&lt;/p&gt;
+            &lt;ul&gt;
+            &lt;li&gt;Vorlesung: 30 Stunden&lt;/li&gt;
+            &lt;li&gt;Gastvorträge: 20 Stunden&lt;/li&gt;
+            &lt;li&gt;Prüfungsvorbereitung: 25 Stunden&lt;/li&gt;
+            &lt;/ul&gt;
+        </ns2:en>
+    </additionalInformation>
+    <lectureNotes>
+        <ns2:de></ns2:de>
+        <ns2:en></ns2:en>
+    </lectureNotes>
+    <examinationModalities>
+        <ns2:de>&lt;p&gt;Nach dem einleitenden Teil gibt es eine 15-minütige, schriftliche Open Book Prüfung über TUWEL
+            (30 Punkte). Am Ende des Semesters findet eine mündliche Prüfung über Zoom statt (70 Punkte). Für die
+            mündliche Abschlussprüfung wird eine Audio- und Videoverbindung über Zoom benötigt. Beide Prüfungen müssen
+            positiv abgeschlossen werden.&lt;/p&gt;
+        </ns2:de>
+        <ns2:en>&lt;p&gt;&lt;span&gt;After the introductory part, there will be a 15 minutes open book exam in TUWEL (30
+            points). At the end of the lecture, there will be an oral exam via Zoom (70 points). For the oral exam,
+            students need an audio- and video connection via Zoom. Both exams have to be positive (i.e., &amp;gt; 50% of
+            the points) for a positive grade.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+        </ns2:en>
+    </examinationModalities>
+    <related>
+        <recommendation>
+            <ns2:de></ns2:de>
+            <ns2:en></ns2:en>
+        </recommendation>
+        <accompanyingCourses>
+            <course>186143</course>
+        </accompanyingCourses>
+    </related>
+    <weeklyHours>2.0</weeklyHours>
+    <lecturers>
+        <oid>10780145</oid>
+        <oid>2460141</oid>
+    </lecturers>
+    <tutors/>
+    <instituteCode>E193</instituteCode>
+    <instituteName>
+        <ns2:de>Institut für Visual Computing and Human-Centered Technology</ns2:de>
+        <ns2:en>Institute of Visual Computing and Human-Centered Technology</ns2:en>
+    </instituteName>
+    <url>https://tiss.tuwien.ac.at/course/courseDetails.xhtml?courseNr=186141&amp;semester=2022S</url>
+    <uses54EctsRule>false</uses54EctsRule>
+    <registration>TISS</registration>
+    <eLearning>https://tuwel.tuwien.ac.at/course/view.php?idnumber=186141-2022S</eLearning>
+    <language>
+        <ns2:de>Englisch</ns2:de>
+        <ns2:en>English</ns2:en>
+    </language>
+</course>

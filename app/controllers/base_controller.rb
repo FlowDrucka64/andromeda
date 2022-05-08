@@ -37,6 +37,11 @@ class BaseController < ApplicationController
   def fetch_url
   end
 
+  # Parse as JSON per default - override if needed
+  def fetch_parse(http_result)
+    JSON.parse http_result.body
+  end
+
   # bundle up information pulled from API with persisted information for given favourite
   # slices the first PAGE_ENTRY_COUNT objects and stores it in "slice" (for rendering of the first result page)
   # calculates how many pages are needed to show all results given PAGE_ENTRY_COUNT
@@ -61,9 +66,9 @@ class BaseController < ApplicationController
   # Fetch a staff member with tiss_id from TISS API
   def api_fetch(id)
     url = fetch_url + id.to_s
-
+    logger.debug url
     return Rails.cache.fetch(url, expires_in: 12.hours) do
-      JSON.parse Excon.get(url).body #executed on cache miss
+      fetch_parse(Excon.get(url)) #executed on cache miss
     end
   end
 
@@ -84,13 +89,19 @@ class BaseController < ApplicationController
   def search_params
   end
 
+  def search_parse(http_result)
+    JSON.parse http_result.body
+  end
+
   # API pull to the tiss api for given searchterm with set search_params
   def api_search(search_term)
     url = search_url + search_term.to_s + search_params
     return Rails.cache.fetch(url, expires_in: 12.hours) do
-      search_transform(JSON.parse Excon.get(url).body) #executed on cache miss
+      search_transform(search_parse(Excon.get(url)))#executed on cache miss
     end
   end
+
+
 
   # adds the information of the needed page_count to the object
   def search_transform(response)

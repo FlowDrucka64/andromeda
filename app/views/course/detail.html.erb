@@ -1,2 +1,31 @@
-<h1>Course details</h1>
-<%= render html: @result %>
+<h1> <%= @result["courseNumber"]%> <%=@result["title"]["de"]  %></h1>
+<hr>
+<h3><%= @result["semesterCode"]%>, <%= @result["courseType"]%></h3>
+<div class="details">
+  <h2> Merkmale</h2>
+  <%= @result["additionalInformation"]["de"].html_safe %>
+
+  <h2> Lernergebnisse</h2>
+  <%= @result["objective"]["de"].html_safe %>
+
+  <h2>Inhalt der Lehrveranstaltung</h2>
+  <%= @result["teachingContent"]["de"].html_safe %>
+
+  <h2>Prüfungsmodalitäten</h2>
+  <%= @result["examinationModalities"]["de"].html_safe %>
+
+  <h2>Institutname</h2>
+  <%= @result["instituteName"]["de"].html_safe %>
+</div>
+<div class="block">
+  <%= link_to "[Courses]" %>
+  <%= link_to "[Projects]" %>
+  <%= link_to "[Theses]" %>
+  <% unless is_favourite(@result["courseNumber"]+"-"+@result["semesterCode"]) %>
+    <%= form_tag(course_create_path, method: :post) do %>
+      <%= hidden_field_tag(:id, @result["courseNumber"]+"-"+@result["semesterCode"]) %>
+      <%= hidden_field_tag(:name, @result["title"]["de"]) %>
+      <%= submit_tag("[Add to Favourites]",:class => "link") %>
+    <% end %>
+  <% end %>
+</div>

@@ -10,7 +10,8 @@ class CourseController < BaseController
     if is_favourite(params[:id])
       #TODO: append favourite information here
     end
-
+    #logger.debug @result
+    #render  html: @result
   end
 
   def create
@@ -41,15 +42,10 @@ class CourseController < BaseController
     return BASE_API_URL + COURSE_FETCH_URI
   end
 
-  # Fetch a staff member with tiss_id from TISS API
-  def api_fetch(id)
-    url = fetch_url + id.to_s
-    logger.debug url
-    return Rails.cache.fetch(url, expires_in: 12.hours) do
-      Excon.get(url).body #executed on cache miss
-    end
+  # override of base_controller
+  def fetch_parse(http_result)
+    return Hash.from_xml(http_result.body.to_s)["tuvienna"]["course"]
   end
-
 
 
 
