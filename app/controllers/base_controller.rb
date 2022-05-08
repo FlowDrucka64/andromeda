@@ -59,9 +59,10 @@ class BaseController < ApplicationController
   end
 
   # Fetch a staff member with tiss_id from TISS API
-  def api_fetch(tiss_id)
-    url = fetch_url + tiss_id.to_s
-    return Rails.cache.fetch(tiss_id, expires_in: 12.hours) do
+  def api_fetch(id)
+    url = fetch_url + id.to_s
+
+    return Rails.cache.fetch(url, expires_in: 12.hours) do
       JSON.parse Excon.get(url).body #executed on cache miss
     end
   end
@@ -78,16 +79,21 @@ class BaseController < ApplicationController
   def search_url
   end
 
-  # API pull to the tiss api for given searchterm with max_treffer= MAX_HITS
+  #This needs to be overridden by every controller using api_search defining the search params used
+  # such as max_treffer or count
+  def search_params
+  end
+
+  # API pull to the tiss api for given searchterm with set search_params
   def api_search(search_term)
-    url = search_url + search_term.to_s + "&max_treffer=" + MAX_HITS.to_s
-    return Rails.cache.fetch(search_term, expires_in: 12.hours) do
-      append_pagecount(JSON.parse Excon.get(url).body) #executed on cache miss
+    url = search_url + search_term.to_s + search_params
+    return Rails.cache.fetch(url, expires_in: 12.hours) do
+      search_transform(JSON.parse Excon.get(url).body) #executed on cache miss
     end
   end
 
   # adds the information of the needed page_count to the object
-  def append_pagecount(response)
+  def search_transform(response)
     response["page_count"] = (response["results"].length.to_f / PAGE_ENTRY_COUNT).ceil.to_i #calculate how much result pages are needed
     return response
   end

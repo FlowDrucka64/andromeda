@@ -27,6 +27,10 @@ Rails.application.routes.draw do
   post "course/query", to: "course#query", as: "course/query"
   get "course/favourites", to: "course#favourites", as: "course/favourites"
   get "course/detail/:id", to: "course#detail", as: "course/detail"
+  post "course/create", to: "course#create", as: "course/create"
+  get "course/edit", to: "course#edit", as: "course/edit"
+  post "course/update", to: "course#update", as: "course/update"
+  get "course/destroy", to: "course#destroy", as: "course/destroy"
 
   #Project functionalities
   get "project/search", to: "project#search", as: "project/search"

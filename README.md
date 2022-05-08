@@ -23,6 +23,34 @@ Things you may want to cover:
 
 * ... --->
 
+# TODOS
+
+1. Course controller
+   1. ~~search~~
+   2. details
+   3. favourites
+      1. add
+      2. edit
+      3. delete
+      4. display
+2. Project controller
+    1. search
+    2. details
+    3. favourites
+        1. add
+        2. edit
+        3. delete
+        4. display
+3. Session controller
+    1. search
+    2. details
+    3. favourites
+        1. add
+        2. edit
+        3. delete
+        4. display
+
+
 # Student Data
 
 Names: Michael Winkler, Florian Drucker

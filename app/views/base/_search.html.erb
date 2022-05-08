@@ -1,8 +1,4 @@
-<%= form_tag(staff_search_url, method: :get) do %>
-  <%= text_field_tag(:q, params[:q]) %>
-  <%= hidden_field_tag :p, 1 %>
-  <div class="center"><%= submit_tag("Search") %></div>
-<% end %>
+
 
 
 <% if not @results.empty? %>

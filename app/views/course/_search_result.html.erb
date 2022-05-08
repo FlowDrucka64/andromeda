@@ -1,0 +1,15 @@
+<%= result["title"] %>
+<br>
+<%= link_to "[Details]", course_detail_url(result["course_number"]+"-"+result["semester"]) %>
+
+<% unless is_favourite(result["course_number"]+"-"+result["semester"]) %>
+  <%= form_tag(course_create_path, method: :post) do %>
+    <%= hidden_field_tag(:course_number, result["course_number"]) %>
+    <%= hidden_field_tag(:semester, result["semester"]) %>
+    <%= hidden_field_tag(:title, result["title"]) %>
+    <%= submit_tag("[Add to Favourites]",:class => "link") %>
+  <% end %>
+<% end %>
+
+
+

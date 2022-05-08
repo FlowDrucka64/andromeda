@@ -1,6 +1,6 @@
-<h1> Staff search</h1>
+<h1> Course search</h1>
 
-<%= form_tag(staff_search_url, method: :get) do %>
+<%= form_tag(course_search_url, method: :get) do %>
   <%= text_field_tag(:q, params[:q]) %>
   <%= hidden_field_tag :p, 1 %>
   <div class="center"><%= submit_tag("Search") %></div>

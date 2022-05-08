@@ -60,7 +60,11 @@ class StaffController < BaseController
 
   # override of base_controller
   def search_url
-    return BASE_API_URL + STAFF_FETCH_URI
+    return BASE_API_URL + STAFF_SEARCH_URI
+  end
+
+  def search_params
+    "&max_treffer=" + MAX_HITS.to_s
   end
 
   # checks if the staff member with given tiss_id is a favourite of the current user
