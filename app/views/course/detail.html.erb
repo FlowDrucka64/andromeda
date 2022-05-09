@@ -1,6 +1,6 @@
 <h1> <%= format_course_number(@result["courseNumber"]) %> <%= @result["title"]["en"] %></h1>
 <hr>
-<h3><%= @result["semesterCode"] %>, <%= @result["courseType"] %></h3>
+<h3><%= @result["semesterCode"] %>, <%= @result["courseType"]%>, <%= @result["weeklyHours"]%>h</h3>
 <div class="details">
   <% unless @result["additionalInformation"]["en"].nil? %>
     <h2>Properties</h2>
@@ -25,6 +25,11 @@
   <% unless @result["instituteName"]["en"].nil? %>
     <h2>Institute name</h2>
     <%= @result["instituteName"]["en"].html_safe %>
+  <% end %>
+
+  <% unless @result["language"]["en"].nil? %>
+    <h2>Language</h2>
+    <%= @result["language"]["en"].html_safe %>
   <% end %>
   
   <% if is_favourite(@result["courseNumber"] + "-" + @result["semesterCode"]) %>

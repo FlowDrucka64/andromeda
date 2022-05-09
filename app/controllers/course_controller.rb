@@ -53,6 +53,7 @@ class CourseController < BaseController
   helper_method :is_favourite # used for case distinction when rendering detail information
   helper_method :get_favourite_data
   helper_method :format_course_number
+  helper_method :get_name
 
   private
 
@@ -79,10 +80,15 @@ class CourseController < BaseController
     ret = "Name not found"
     @favourites["objects"].each do |f|
       if f["fav_id"] == id
-        ret = f["title"]["de"]
+        ret = f["title"]["en"]
       end
     end
     ret
+  end
+
+  def get_name(id)
+    obj = api_fetch(id)
+    return format_course_number(obj["courseNumber"])+" "+obj["title"]["en"] + ", "+obj["semesterCode"]
   end
 
   # override of base_controller

@@ -9,6 +9,7 @@ class BaseController < ApplicationController
       # "calculation" of the results to display on the current page of the results
       @results["result_slice"] = @results["results"].slice(PAGE_ENTRY_COUNT * (params[:p].to_i - 1), PAGE_ENTRY_COUNT)
     end
+    logger.debug @results
   end
 
 
@@ -66,7 +67,6 @@ class BaseController < ApplicationController
   # Fetch a staff member with tiss_id from TISS API
   def api_fetch(id)
     url = fetch_url + id.to_s
-    logger.debug url
     return Rails.cache.fetch(url, expires_in: 12.hours) do
       fetch_parse(Excon.get(url)) #executed on cache miss
     end

@@ -1,4 +1,4 @@
-<%= result["title"] %>
+<%= get_name(result["course_number"]+"-"+result["semester"]) %>
 <br>
 <%= link_to "[Details]", course_detail_url(result["course_number"]+"-"+result["semester"]) %>
 
