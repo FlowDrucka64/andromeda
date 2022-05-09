@@ -10,6 +10,7 @@ class CourseController < BaseController
 
   def detail
     @result = api_fetch(params[:id])
+    logger.debug @result
   end
 
   def create

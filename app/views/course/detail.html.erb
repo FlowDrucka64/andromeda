@@ -1,27 +1,37 @@
-<h1> <%= format_course_number(@result["courseNumber"])%> <%=@result["title"]["de"]  %></h1>
+<h1> <%= format_course_number(@result["courseNumber"]) %> <%= @result["title"]["en"] %></h1>
 <hr>
-<h3><%= @result["semesterCode"]%>, <%= @result["courseType"]%></h3>
+<h3><%= @result["semesterCode"] %>, <%= @result["courseType"] %></h3>
 <div class="details">
-  <h2>Merkmale</h2>
-  <%= @result["additionalInformation"]["de"].html_safe %>
+  <% unless @result["additionalInformation"]["en"].nil? %>
+    <h2>Properties</h2>
+    <%= @result["additionalInformation"]["en"].html_safe %>
+  <% end %>
 
-  <h2>Lernergebnisse</h2>
-  <%= @result["objective"]["de"].html_safe %>
+  <% unless @result["objective"]["en"].nil? %>
+    <h2>Learning outcomes</h2>
+    <%= @result["objective"]["en"].html_safe %>
+  <% end %>
 
-  <h2>Inhalt der Lehrveranstaltung</h2>
-  <%= @result["teachingContent"]["de"].html_safe %>
+  <% unless @result["teachingContent"]["en"].nil? %>
+    <h2>Subject of course</h2>
+    <%= @result["teachingContent"]["en"].html_safe %>
+  <% end %>
 
-  <h2>Prüfungsmodalitäten</h2>
-  <%= @result["examinationModalities"]["de"].html_safe %>
+  <% unless @result["examinationModalities"]["en"].nil? %>
+    <h2>Mode of examination</h2>
+    <%= @result["examinationModalities"]["en"].html_safe %>
+  <% end %>
 
-  <h2>Institutname</h2>
-  <%= @result["instituteName"]["de"].html_safe %>
-
-  <% if is_favourite(@result["courseNumber"]+"-"+@result["semesterCode"]) %>
+  <% unless @result["instituteName"]["en"].nil? %>
+    <h2>Institute name</h2>
+    <%= @result["instituteName"]["en"].html_safe %>
+  <% end %>
+  
+  <% if is_favourite(@result["courseNumber"] + "-" + @result["semesterCode"]) %>
     <br>
-    <h2>Favouriteninformation:</h2>
-    <p>Notes: <%= get_favourite_data(@result["courseNumber"]+"-"+@result["semesterCode"])["notes"] %></p>
-    <p>Keywords: <%= get_favourite_data(@result["courseNumber"]+"-"+@result["semesterCode"])["keywords"] %></p>
+    <h2>Favourite information:</h2>
+    <p>Notes: <%= get_favourite_data(@result["courseNumber"] + "-" + @result["semesterCode"])["notes"] %></p>
+    <p>Keywords: <%= get_favourite_data(@result["courseNumber"] + "-" + @result["semesterCode"])["keywords"] %></p>
   <% end %>
 </div>
 <div class="block">
@@ -30,8 +40,9 @@
   <%= link_to "[Theses]" %>
   <% unless is_favourite(@result["courseNumber"]+"-"+@result["semesterCode"]) %>
     <%= form_tag(course_create_path, method: :post) do %>
-      <%= hidden_field_tag(:id, @result["courseNumber"]+"-"+@result["semesterCode"]) %>
-      <%= hidden_field_tag(:name, @result["title"]["de"]) %>
+      <%= hidden_field_tag(:course_number, @result["courseNumber"]) %>
+      <%= hidden_field_tag(:semester, @result["semesterCode"]) %>
+      <%= hidden_field_tag(:title, @result["title"]) %>
       <%= submit_tag("[Add to Favourites]",:class => "link") %>
     <% end %>
   <% end %>
