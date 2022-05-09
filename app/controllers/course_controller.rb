@@ -6,7 +6,6 @@ class CourseController < BaseController
     @favourites = load_favourite_bundle(current_user.course_favourites)
     # "calculation" of the results to display on the current page of the results
     @favourites["slice"] = @favourites["objects"].slice(PAGE_ENTRY_COUNT * (params[:p].to_i - 1), PAGE_ENTRY_COUNT)
-    logger.debug @favourites
   end
 
   def detail
@@ -122,7 +121,6 @@ class CourseController < BaseController
       params = Rack::Utils.parse_nested_query(tmp)
       r["course_number"] = params["courseNr"]
       r["semester"] = params["semester"]
-      logger.debug r
     end
     return response
   end
