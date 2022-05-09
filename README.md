@@ -126,6 +126,8 @@ https://tiss.tuwien.ac.at/api/dokumentation
 | 21.04  |                                         Staff favourite fetch + render                                          |  2:27  |
 | 21.04  |                                   Staff favourite cleanup / Add, edit, delete                                   |  2:42  |
 | 30.04  |                                             Documentation, cleanup                                              |  1:41  |
+| 08.05  |                                             Course search, details                                              |  3:21  |
+| 09.05  |                     Course functionalities done                                                                 |  2:05  |
 |        |                                                       SUM                                                       | 19:05  |
 ## Michael Winkler
 

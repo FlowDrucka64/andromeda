@@ -1,0 +1,18 @@
+<h2>
+  <%= format_course_number(favourite["courseNumber"]) %> <%= favourite["title"]["de"] %>
+</h2>
+
+<h3>
+  <%= favourite["notes"] %>
+</h3>
+<h4>
+  <%= favourite["keywords"] %>
+</h4>
+
+<h2>
+  <%= link_to "[Details]", course_detail_url(favourite["courseNumber"]+"-"+favourite["semesterCode"]) %>
+  <%= link_to "[Edit]", course_edit_path(id: favourite["fav_id"]) %>
+  <%= link_to "[Remove]", course_destroy_path(id: favourite["fav_id"]) %>
+</h2>
+
+

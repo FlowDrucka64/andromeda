@@ -22,6 +22,7 @@ class StaffController < BaseController
 
   # Displays an edit form for a favourite given by the id in params
   def edit
+    @favourites = load_favourite_bundle(current_user.staff_favourites)
     @favourite = current_user.staff_favourites.where(:id => params["id"].to_i)[0]
     @fav_name = get_fav_name(params["id"].to_i)
   end
