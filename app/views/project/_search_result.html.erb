@@ -1,0 +1,12 @@
+<%= result["title"] %><br>
+<%= link_to "[Details]", project_detail_url(result["id"]) %>
+<% unless is_favourite(result["id"]) %>
+  <%= form_tag(project_create_path, method: :post) do %>
+    <%= hidden_field_tag(:id, result["id"]) %>
+    <%= hidden_field_tag(:title, result["title"]) %>
+    <%= submit_tag("[Add to Favourites]",:class => "link") %>
+  <% end %>
+<% end %>
+
+
+

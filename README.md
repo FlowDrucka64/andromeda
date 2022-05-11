@@ -131,17 +131,21 @@ https://tiss.tuwien.ac.at/api/dokumentation
 |        |                                                       SUM                                                       | 19:05  |
 ## Michael Winkler
 
-|    Date     |                                       Task                                        | Amount |
-|:-----------:|:---------------------------------------------------------------------------------:|:------:|
-| 31.03.2022  |   Setup Ruby on Rails on Windows 10 WSL - https://gorails.com/setup/windows/10    |   1h   |
-| 02.04.2022  | Work through Rails tutorial - https://guides.rubyonrails.org/getting_started.html |   2h   |
-| 04.04.2022  |                               Stylesheet - Research                               |   1h   |
-| 06.04.2022  |                         Stylesheet - First basic version                          |  1.5h  |
-| 11.04.2022  |                             Alignment with Colleague                              |   1h   |
-| 11.04.2022  |                             Stylesheet - Improvement                              |   2h   |
-| 21.04.2022  |                             Alignment with Colleague                              |   1h   |
-| 21.04.2022  |                          Detail View for search results                           |  2.5h  |
-| 22.04.2022  |                             Alignment with Colleague                              |  0.5h  |
-| 22.04.2022  |                      Adopt Detail View to support Favorites                       |  1.5h  |
-| 01.05.2022  |           Alignment, Clean up for intermediate hand in, Styling changes           |   1h   |
-|             |                                        SUM                                        |  15h   |
+|    Date    |                                       Task                                        | Amount |
+|:----------:|:---------------------------------------------------------------------------------:|:------:|
+| 31.03.2022 |   Setup Ruby on Rails on Windows 10 WSL - https://gorails.com/setup/windows/10    |   1h   |
+| 02.04.2022 | Work through Rails tutorial - https://guides.rubyonrails.org/getting_started.html |   2h   |
+| 04.04.2022 |                               Stylesheet - Research                               |   1h   |
+| 06.04.2022 |                         Stylesheet - First basic version                          |  1.5h  |
+| 11.04.2022 |                             Alignment with Colleague                              |   1h   |
+| 11.04.2022 |                             Stylesheet - Improvement                              |   2h   |
+| 21.04.2022 |                             Alignment with Colleague                              |   1h   |
+| 21.04.2022 |                          Detail View for search results                           |  2.5h  |
+| 22.04.2022 |                             Alignment with Colleague                              |  0.5h  |
+| 22.04.2022 |                      Adopt Detail View to support Favorites                       |  1.5h  |
+| 01.05.2022 |           Alignment, Clean up for intermediate hand in, Styling changes           |   1h   |
+| 10.05.2022 |                            Work on Project Controller                             |  1.5h  |
+| 11.05.2022 |                            Work on Project Controller                             |   3h   |
+| 11.05.2022 |                             Work on Thesis Controller                             |  1.5h  |
+| 12.05.2022 |                             Work on Thesis Controller                             |   3h   |
+|            |                                        SUM                                        |  24h   |

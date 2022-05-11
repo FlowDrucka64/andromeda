@@ -1,8 +1,0 @@
-Date		Amount	Task
-31.03.2022	1h		Setup Ruby on Rails on Windows 10 WSL - https://gorails.com/setup/windows/10
-02.04.2022	2h		Work through Rails tutorial - https://guides.rubyonrails.org/getting_started.html
-04.04.2022	1h		Stylesheet - Research
-06.04.2022	1.5h	Stylesheet - First basic version
-11.04.2022  1h		Alignment with Colleague
-11.04.2022  2h      Stylesheet - Improvement
-SUM		8.5h

@@ -37,11 +37,18 @@ Rails.application.routes.draw do
   post "project/query", to: "project#query", as: "project/query"
   get "project/favourites", to: "project#favourites", as: "project/favourites"
   get "project/detail/:id", to: "project#detail", as: "project/detail"
+  post "project/create", to: "project#create", as: "project/create"
+  get "project/edit", to: "project#edit", as: "project/edit"
+  post "project/update", to: "project#update", as: "project/update"
+  get "project/destroy", to: "project#destroy", as: "project/destroy"
 
   #Thesis functionalities
   get "thesis/search", to: "thesis#search", as: "thesis/search"
   post "thesis/query", to: "thesis#query", as: "thesis/query"
   get "thesis/favourites", to: "thesis#favourites", as: "thesis/favourites"
   get "thesis/detail/:id", to: "thesis#detail", as: "thesis/detail"
-
+  post "thesis/create", to: "thesis#create", as: "thesis/create"
+  get "thesis/edit", to: "thesis#edit", as: "thesis/edit"
+  post "thesis/update", to: "thesis#update", as: "thesis/update"
+  get "thesis/destroy", to: "thesis#destroy", as: "thesis/destroy"
 end

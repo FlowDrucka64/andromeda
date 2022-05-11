@@ -7,3 +7,6 @@ STAFF_FETCH_URI = "/person/v22/id/".freeze
 
 COURSE_SEARCH_URI = "/search/course/v1.0/quickSearch?searchterm=".freeze
 COURSE_FETCH_URI = "/course/".freeze
+
+PROJECT_SEARCH_URI = "/pdb/rest/projectFullSearch/v1.0/projects?searchterm=".freeze
+PROJECT_FETCH_URI = "/pdb/rest/project/v3/".freeze

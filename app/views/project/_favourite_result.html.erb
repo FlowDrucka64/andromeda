@@ -1,0 +1,20 @@
+<% if favourite["title"]["en"].nil? %>
+  <h2> <%= favourite["title"]["de"] %></h2>
+<% else %>
+  <h2> <%= favourite["title"]["en"] %></h2>
+<% end %>
+
+<h3>
+  <%= favourite["notes"] %>
+</h3>
+<h4>
+  <%= favourite["keywords"] %>
+</h4>
+
+<h2>
+  <%= link_to "[Details]", project_detail_path(favourite["id"]) %>
+  <%= link_to "[Edit]", project_edit_path(id: favourite["fav_id"]) %>
+  <%= link_to "[Remove]", project_destroy_path(id: favourite["fav_id"]) %>
+</h2>
+
+

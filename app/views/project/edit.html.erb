@@ -1,0 +1,20 @@
+<h1> Edit notes and keywords for <%= @fav_name["en"] %></h1>
+
+<%= form_with model: @favourite, url: project_update_path(id: @favourite["id"]), method: :post do |form| %>
+  <div>
+    <%= form.label :notes %>
+    <%= form.text_field :notes %>
+  </div>
+  <div>
+    <%= form.label :keywords %>
+    <%= form.text_field :keywords %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<h2>
+  <%= link_to "[Back to Project Favourites]", project_favourites_url(:p => 1) %>
+</h2>
+
