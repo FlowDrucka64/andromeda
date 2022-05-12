@@ -1,0 +1,9 @@
+<h1> Thesis search</h1>
+
+<%= form_tag(thesis_search_url, method: :get) do %>
+  <%= text_field_tag(:q, params[:q]) %>
+  <%= hidden_field_tag :p, 1 %>
+  <div class="center"><%= submit_tag("Search") %></div>
+<% end %>
+
+<%= render "base/search" %>

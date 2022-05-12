@@ -47,8 +47,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_09_111718) do
   create_table "thesis_favourites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "thesis_id"
-    t.integer "dsw_id"
-    t.integer "dsr_id"
     t.string "notes"
     t.string "keywords"
     t.datetime "created_at", null: false

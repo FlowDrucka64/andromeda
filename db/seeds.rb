@@ -25,6 +25,6 @@ ProjectFavourite.create(user_id: 1, project_id: 5874, notes: "seed entry", keywo
 ProjectFavourite.create(user_id: 2, project_id: 1708928, notes: "seed entry", keywords: "seed")
 ProjectFavourite.create(user_id: 3, project_id: 1641749, notes: "seed entry", keywords: "seed")
 
-ThesisFavourite.create(user_id: 1, thesis_id: 63221, dsw_id: 2791, dsr_id: 7, notes: "seed entry", keywords: "seed")
-ThesisFavourite.create(user_id: 2, thesis_id: 63220, dsw_id: 2791, dsr_id: 30, notes: "seed entry", keywords: "seed")
-ThesisFavourite.create(user_id: 3, thesis_id: 63222, dsw_id: 2791, dsr_id: 411, notes: "seed entry", keywords: "seed")
+ThesisFavourite.create(user_id: 1, thesis_id: 92760, notes: "seed entry", keywords: "seed")
+ThesisFavourite.create(user_id: 2, thesis_id: 98360, notes: "seed entry", keywords: "seed")
+ThesisFavourite.create(user_id: 3, thesis_id: 90183, notes: "seed entry", keywords: "seed")

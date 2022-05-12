@@ -1,0 +1,79 @@
+<% if @result["title"]["en"].nil? %>
+  <h1> <%= @result["title"]["de"] %></h1>
+<% else %>
+  <h1> <%= @result["title"]["en"] %></h1>
+<% end %>
+
+<hr>
+<h3>Type: <%= @result["thesisType"] %></h3>
+<div class="details">
+  <h2>Thesis Details</h2>
+  <% unless @result["instituteCode"].nil? %>
+    <p><b>Institute code:</b> <%= @result["instituteCode"].html_safe %></p>
+  <% end %>
+
+  <% unless @result["instituteName"].nil? %>
+    <p><b>Institute Name:</b> <%= @result["instituteName"]["en"].html_safe %></p>
+  <% end %>
+
+  <% unless @result["facultyCode"].nil? %>
+    <p><b>Faculty Code:</b> <%= @result["facultyCode"].html_safe %></p>
+  <% end %>
+
+  <% unless @result["facultyName"].nil? %>
+    <p><b>Faculty Name:</b> <%= @result["facultyName"]["en"].html_safe %></p>
+  <% end %>
+
+  <% unless @result["keywords"].nil? %>
+    <p><b>Keywords:</b> <%= @result["keywords"]["en"].html_safe %></p>
+  <% end %>
+
+  <% unless @result["offeredLanguage"].nil? %>
+    <p><b>Offered Language:</b> <%= @result["offeredLanguage"].html_safe %></p>
+  <% end %>
+
+  <h2>Advisors</h2>
+  <p><b>Advisor:</b>
+    <% unless @result["advisor"]["prefixTitle"].nil? %>
+      <%= @result["advisor"]["prefixTitle"].html_safe %>
+    <% end %>
+    <%= @result["advisor"]["givenName"].html_safe %>
+    <%= @result["advisor"]["familyName"].html_safe %>
+    <% unless @result["advisor"]["postfixTitle"].nil? %>
+      <%= @result["advisor"]["postfixTitle"].html_safe %>
+    <% end %>
+  </p>
+  <% unless @result["assistant"].nil? %>
+  <p><b>Assistant:</b>
+    <% unless @result["assistant"]["prefixTitle"].nil? %>
+      <%= @result["assistant"]["prefixTitle"].html_safe %>
+    <% end %>
+    <%= @result["assistant"]["givenName"].html_safe %>
+    <%= @result["assistant"]["familyName"].html_safe %>
+    <% unless @result["assistant"]["postfixTitle"].nil? %>
+      <%= @result["assistant"]["postfixTitle"].html_safe %>
+    <% end %>
+  </p>
+    <h2>Details</h2>
+    <% unless @result["url"].nil? %>
+      <p><b>URL:</b> <a href="<%= @result["url"].html_safe %>"><%= @result["url"].html_safe %></a></p>
+    <% end %>
+  <% end %>
+  <% if is_favourite(params[:id]) %>
+    <h2>Favourite information:</h2>
+    <p>Notes: <%= get_favourite_data(params[:id])["notes"] %></p>
+    <p>Keywords: <%= get_favourite_data(params[:id])["keywords"] %></p>
+  <% end %>
+</div>
+<div class="block">
+  <%= link_to "[Courses]" %>
+  <%= link_to "[Projects]" %>
+  <%= link_to "[Theses]" %>
+  <% unless is_favourite(params[:id]) %>
+    <%= form_tag(thesis_create_path, method: :post) do %>
+      <%= hidden_field_tag(:id, params[:id]) %>
+      <%= hidden_field_tag(:title, @result["title"]["en"]) %>
+      <%= submit_tag("[Add to Favourites]",:class => "link") %>
+    <% end %>
+  <% end %>
+</div>
