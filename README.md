@@ -79,14 +79,14 @@ For the main functionallities
                                          application_controller
                                                   |
                                              base_controller
-                                         /     |       |        \
-                                staff_c.   thesis_c.  project_c.  course_c.
+                            /             /         |          \       \
+                     fullreport_c.    staff_c.   thesis_c.  project_c.  course_c.
 
 For Session and User management
 
                                             application_c.
                                              /         \
-                                       session c.     user_c.
+                                         session c.     user_c.
 # TISS API doc
 
 https://tiss.tuwien.ac.at/api/dokumentation
@@ -99,6 +99,9 @@ https://tiss.tuwien.ac.at/api/dokumentation
 
 |  Date  |                                                   Description                                                   | Amount |
 |:------:|:---------------------------------------------------------------------------------------------------------------:|:------:|
+| 31.03. |                  Setup Ruby on Rails on Windows 10 WSL - https://gorails.com/setup/windows/10                   |  3:12  |
+| 02.04. |                Work through Rails tutorial - https://guides.rubyonrails.org/getting_started.html                |  6:28  |
+| 04.04. |                                        figuring out how to use partials                                         |  5:21  |
 | 09.04. |                                  initial model,view and db setup (with seeds)                                   |  1:45  |
 | 09.04. |        user registration, session management, simple user homepage, flash display in application layout         |  1:50  |
 | 10.04. | search controller (parent) and children (staff, course, project, thesis) <br/>partials for all searches/results |  3:24  |
@@ -109,8 +112,10 @@ https://tiss.tuwien.ac.at/api/dokumentation
 | 21.04  |                                   Staff favourite cleanup / Add, edit, delete                                   |  2:42  |
 | 30.04  |                                             Documentation, cleanup                                              |  1:41  |
 | 08.05  |                                             Course search, details                                              |  3:21  |
-| 09.05  |                     Course functionalities done                                                                 |  2:05  |
-|        |                                                       SUM                                                       | 19:05  |
+| 09.05  |                                           Course functionalities done                                           |  2:05  |
+| 16.06  |                                          Fullreport functionality done                                          |  8:44  |
+| 17.06  |                                             Documentation, cleanup                                              |  4:19  |
+|        |                                                       SUM                                                       | 52:39  |
 ## Michael Winkler
 
 |    Date     |                                       Task                                        | Amount |

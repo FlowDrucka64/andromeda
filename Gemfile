@@ -15,6 +15,9 @@ gem "sqlite3", "~> 1.4"
 #API pulls
 gem 'excon'
 
+gem 'rails-i18n', '>= 4.0.8'
+
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
