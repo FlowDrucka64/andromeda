@@ -93,6 +93,13 @@ input[type=submit].link:hover {
     cursor: pointer;
 }
 
+@media print{
+    header{
+        display: none;
+        margin-left: 0;
+    }
+}
+
 @media screen and (min-width: 1200px) {
     body {
         margin: auto;

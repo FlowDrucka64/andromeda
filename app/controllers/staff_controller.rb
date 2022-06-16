@@ -50,7 +50,6 @@ class StaffController < BaseController
   end
 
   def print
-    render :layout => false
     @favourites = load_favourite_bundle(current_user.staff_favourites)
   end
 

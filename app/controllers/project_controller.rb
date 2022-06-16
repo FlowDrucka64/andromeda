@@ -48,7 +48,6 @@ class ProjectController < BaseController
   end
 
   def print
-    render :layout => false
     @favourites = load_favourite_bundle(current_user.project_favourites)
   end
 
