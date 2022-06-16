@@ -1,0 +1,41 @@
+<h1> <%= format_course_number(result["courseNumber"]) %> <%= result["title"]["en"] %></h1>
+<hr>
+<h3><%= result["semesterCode"] %>, <%= result["courseType"]%>, <%= result["weeklyHours"]%>h</h3>
+<div class="details">
+  <% unless result["additionalInformation"]["en"].nil? %>
+    <h2>Properties</h2>
+    <%= result["additionalInformation"]["en"].html_safe %>
+  <% end %>
+
+  <% unless result["objective"]["en"].nil? %>
+    <h2>Learning outcomes</h2>
+    <%= result["objective"]["en"].html_safe %>
+  <% end %>
+
+  <% unless result["teachingContent"]["en"].nil? %>
+    <h2>Subject of course</h2>
+    <%= result["teachingContent"]["en"].html_safe %>
+  <% end %>
+
+  <% unless result["examinationModalities"]["en"].nil? %>
+    <h2>Mode of examination</h2>
+    <%= result["examinationModalities"]["en"].html_safe %>
+  <% end %>
+
+  <% unless result["instituteName"]["en"].nil? %>
+    <h2>Institute name</h2>
+    <%= result["instituteName"]["en"].html_safe %>
+  <% end %>
+
+  <% unless result["language"]["en"].nil? %>
+    <h2>Language</h2>
+    <%= result["language"]["en"].html_safe %>
+  <% end %>
+  <% if course_is_favourite(result["courseNumber"] + "-" + result["semesterCode"]) %>
+    <br>
+    <h2>Favourite information:</h2>
+    <p>Notes: <%= course_get_favourite_data(result["courseNumber"] + "-" + result["semesterCode"])["notes"] %></p>
+    <p>Keywords: <%= course_get_favourite_data(result["courseNumber"] + "-" + result["semesterCode"])["keywords"] %></p>
+  <% end %>
+
+</div>

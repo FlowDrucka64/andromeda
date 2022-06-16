@@ -25,30 +25,12 @@ Things you may want to cover:
 
 # TODOS
 
-1. Course controller
-   1. ~~search~~
-   2. ~~details~~
-   3. ~~favourites~~
-      1. ~~add~~
-      2. ~~edit~~
-      3. ~~delete~~
-      4. ~~display~~
-2. Project controller
-    1. search
-    2. details
-    3. favourites
-        1. add
-        2. edit
-        3. delete
-        4. display
-3. Session controller
-    1. search
-    2. details
-    3. favourites
-        1. add
-        2. edit
-        3. delete
-        4. display
+1. model-based validation
+
+2. printable list of favorites for each category with/out personal annotations
+
+3. full person report tht includes all available information (in the four categories) for one lecturer and on the report page provide an interactive highlightning function that is able to handle regular experessions
+
 
 
 # Student Data

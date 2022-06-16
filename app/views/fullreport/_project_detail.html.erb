@@ -1,0 +1,48 @@
+<% if result["title"]["en"].nil? %>
+  <h1> <%= result["title"]["de"] %></h1>
+<% else %>
+  <h1> <%= result["title"]["en"] %></h1>
+<% end %>
+
+<hr>
+<h3><%= result["shortDescription"] %></h3>
+<div class="details">
+  <h2>Project Details</h2>
+  <% unless result["contractBegin"].nil? %>
+    <p><b>Contract Begin:</b> <%= result["contractBegin"].html_safe %></p>
+  <% end %>
+
+  <% unless result["contractEnd"].nil? %>
+    <p><b>Contract End:</b> <%= result["contractEnd"].html_safe %></p>
+  <% end %>
+
+  <% unless result["projectBegin"].nil? %>
+    <p><b>Project Begin:</b> <%= result["projectBegin"].html_safe %></p>
+  <% end %>
+
+  <% unless result["projectEnd"].nil? %>
+    <p><b>Project End:</b> <%= result["projectEnd"].html_safe %></p>
+  <% end %>
+
+  <% unless result["projectForm"].nil? %>
+    <p><b>Project Form:</b> <%= result["projectForm"].html_safe %></p>
+  <% end %>
+
+  <% unless result["projectType"].nil? %>
+    <p><b>Project Type:</b> <%= result["projectType"].html_safe %></p>
+  <% end %>
+
+  <h2>Abstract</h2>
+  <% unless result["abstract"].nil? %>
+    <% if result["abstract"]["en"].nil? %>
+      <p><%= result["abstract"]["de"].html_safe %></p>
+    <% else %>
+      <p><%= result["abstract"]["en"].html_safe %></p>
+    <% end %>
+  <% end %>
+  <% if project_is_favourite(result["id"]) %>
+    <h2>Favourite information:</h2>
+    <p>Notes: <%= project_get_favourite_data(result["id"])["notes"] %></p>
+    <p>Keywords: <%= project_get_favourite_data(result["id"])["keywords"] %></p>
+  <% end %>
+</div>

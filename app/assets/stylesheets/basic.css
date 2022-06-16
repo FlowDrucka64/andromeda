@@ -23,7 +23,11 @@ img {
 }
 
 div.details{
-    float: left;
+}
+
+h1.green{
+    font-size: 3em;
+    color: yellowgreen;
 }
 
 div.block{

@@ -17,6 +17,9 @@
     <p>Keywords: <%= get_favourite_data(@result["tiss_id"])["keywords"] %></p>
   <% end %>
 </div>
+<div>
+  <%= link_to "[Fullreport]",  fullreport_url(@result["tiss_id"]) %>
+</div>
 <div class="block">
 <%= link_to "[Courses]" %>
 <%= link_to "[Projects]" %>

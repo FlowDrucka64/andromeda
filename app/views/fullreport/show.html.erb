@@ -1,0 +1,71 @@
+<div class="block">
+  <h1 class="green">Person details</h1>
+
+  <h3><%= @person["preceding_titles"] %></h3>
+  <h2><%= @person["first_name"] %> <%= @person["last_name"] %></h2>
+  <h3><%= @person["postpositioned_titles"] %></h3>
+  <% unless @person["picture_uri"].nil? %>
+    <img src="<%= BASE_URL %><%= @person["picture_uri"] %>">
+  <% end %>
+  <div class="details">
+    <p>Gender: <%= @person["gender"] %></p>
+    <p>Main phone number: <%= @person["main_phone_number"] %></p>
+    <p>Main email: <%= @person["main_email"] %></p>
+    <% if staff_is_favourite(@person["tiss_id"]) %>
+      <br>
+      <p>Favourites data:</p>
+      <p>Notes: <%= staff_get_favourite_data(@person["tiss_id"])["notes"] %></p>
+      <p>Keywords: <%= staff_get_favourite_data(@person["tiss_id"])["keywords"] %></p>
+    <% end %>
+  </div>
+</div>
+
+
+<div>
+  <% unless @courses.nil? %>
+    <% unless @courses.empty? %>
+      <h1 class="green"> Courses</h1>
+      <% if not @courses.kind_of?(Array) %>
+        <%= render 'fullreport/course_detail', result: @courses %>
+      <% else %>
+        <% @courses.each do |f| %>
+          <%= render 'fullreport/course_detail', result: f %>
+          <br>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<div>
+  <% unless @courses.nil? %>
+    <% unless @projects.empty? || @projects.nil? %>
+      <h1 class="green"> Projects</h1>
+      <% if not @projects.kind_of?(Array) %>
+        <%= render 'fullreport/project_detail', result: @projects %> %>
+      <% else %>
+        <% @projects.each do |f| %>
+          <%= render 'fullreport/project_detail', result: f %>
+          <br>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<div>
+  <% unless @courses.nil? %>
+    <% unless @thesis.empty? || @thesis.nil? %>
+      <h1 class="green"> Thesis</h1>
+      <% if not @thesis.kind_of?(Array) %>
+        <%= render 'fullreport/thesis_detail', result: @thesis %> %>
+      <% else %>
+        <% @thesis.each do |f| %>
+          <%= render 'fullreport/thesis_detail', result: f %>
+          <br>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+

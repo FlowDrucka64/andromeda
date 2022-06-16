@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   post "staff/update", to: "staff#update", as: "staff/update"
   get "staff/destroy", to: "staff#destroy", as: "staff/destroy"
 
+
+  get "fullreport/:id", to: "fullreport#show", as: "fullreport"
+
   #Course functionalities
   get "course/search", to: "course#search", as: "course/search"
   post "course/query", to: "course#query", as: "course/query"

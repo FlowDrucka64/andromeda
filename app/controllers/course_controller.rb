@@ -51,7 +51,7 @@ class CourseController < BaseController
 
 
   helper_method :is_favourite # used for case distinction when rendering detail information
-  helper_method :get_favourite_data
+  helper_method :get_favourite_data # used for rendering detail information
   helper_method :format_course_number
   helper_method :get_name
   helper_method :get_fav_url

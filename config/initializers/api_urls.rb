@@ -13,3 +13,6 @@ PROJECT_FETCH_URI = "/pdb/rest/project/v3/".freeze
 
 THESIS_SEARCH_URI = "/search/thesis/v1.0/quickSearch?searchterm=".freeze
 THESIS_FETCH_URI = "/thesis/".freeze
+
+
+COURSE_SEARCH_BY_LECTURER_URI = "/course/lecturer/".freeze
