@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get "staff/edit", to: "staff#edit", as: "staff/edit"
   post "staff/update", to: "staff#update", as: "staff/update"
   get "staff/destroy", to: "staff#destroy", as: "staff/destroy"
+  get "staff/print", to: "staff#print", as: "staff/print"
 
 
   get "fullreport/:id", to: "fullreport#show", as: "fullreport"
@@ -34,6 +35,7 @@ Rails.application.routes.draw do
   get "course/edit", to: "course#edit", as: "course/edit"
   post "course/update", to: "course#update", as: "course/update"
   get "course/destroy", to: "course#destroy", as: "course/destroy"
+  get "course/print", to: "course#print", as: "course/print"
 
   #Project functionalities
   get "project/search", to: "project#search", as: "project/search"
@@ -44,6 +46,7 @@ Rails.application.routes.draw do
   get "project/edit", to: "project#edit", as: "project/edit"
   post "project/update", to: "project#update", as: "project/update"
   get "project/destroy", to: "project#destroy", as: "project/destroy"
+  get "project/print", to: "project#print", as: "project/print"
 
   #Thesis functionalities
   get "thesis/search", to: "thesis#search", as: "thesis/search"
@@ -54,4 +57,6 @@ Rails.application.routes.draw do
   get "thesis/edit", to: "thesis#edit", as: "thesis/edit"
   post "thesis/update", to: "thesis#update", as: "thesis/update"
   get "thesis/destroy", to: "thesis#destroy", as: "thesis/destroy"
+  get "thesis/print", to: "thesis#print", as: "thesis/print"
+
 end

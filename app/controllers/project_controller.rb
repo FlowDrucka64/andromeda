@@ -47,6 +47,11 @@ class ProjectController < BaseController
     end
   end
 
+  def print
+    render :layout => false
+    @favourites = load_favourite_bundle(current_user.project_favourites)
+  end
+
   helper_method :is_favourite # used for case distinction when rendering detail information
   helper_method :get_favourite_data # used for rendering detail information
   helper_method :get_fav_url

@@ -24,6 +24,9 @@ class BaseController < ApplicationController
     @result = api_fetch(params[:id])
   end
 
+  def print
+  end
+
 
   # Fetch a staff member with tiss_id from TISS API
   def api_fetch(id)

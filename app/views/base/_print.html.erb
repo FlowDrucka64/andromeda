@@ -1,0 +1,13 @@
+<% if not @favourites.empty? %>
+    <ul>
+      <% @favourites.each do |f| %>
+        <li>
+          <%= render 'favourite_result', favourite: f %>
+        </li>
+      <% end %>
+    </ul>
+<% else %>
+  <ul>
+    Sorry no results!
+  </ul>
+<% end %>
