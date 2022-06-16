@@ -1,4 +1,5 @@
 <div class="printnav">
+  <%= link_to '[Print]', 'placeholder', :onclick => 'window.print();return false;'%>
   <% if params[:annotations].to_i == 1 %>
     <%= link_to "[Toggle annotations]", thesis_print_path(:annotations => 0)%>
   <% else %>
