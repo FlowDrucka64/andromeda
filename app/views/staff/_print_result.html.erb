@@ -2,12 +2,13 @@
   <%= favourite["first_name"] %>
   <%= favourite["last_name"] %>
 </h2>
-
-<h3>
-  <%= favourite["notes"] %>
-</h3>
-<h4>
-  <%= favourite["keywords"] %>
-</h4>
+<% if params[:annotations].to_i == 1 %>
+  <h3>
+    <%= favourite["notes"] %>
+  </h3>
+  <h4>
+    <%= favourite["keywords"] %>
+  </h4>
+<% end %>
 
 

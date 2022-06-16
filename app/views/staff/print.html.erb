@@ -1,2 +1,9 @@
+<div class="printnav">
+  <% if params[:annotations].to_i == 1 %>
+    <%= link_to "[Toggle annotations]", staff_print_path(:annotations => 0)%>
+  <% else %>
+    <%= link_to "[Toggle annotations]", staff_print_path(:annotations => 1)%>
+  <% end %>
+</div>
 <h1>Staff Favourites</h1>
 <%= render "base/print" %>

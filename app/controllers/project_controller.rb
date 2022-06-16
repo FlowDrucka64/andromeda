@@ -48,7 +48,7 @@ class ProjectController < BaseController
   end
 
   def print
-    @favourites = load_favourite_bundle(current_user.project_favourites)
+    @favourites = load_favourite_bundle(current_user.project_favourites)['objects']
   end
 
   helper_method :is_favourite # used for case distinction when rendering detail information

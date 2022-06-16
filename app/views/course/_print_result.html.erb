@@ -1,0 +1,11 @@
+<h2>
+  <%= format_course_number(favourite["courseNumber"]) %> <%= favourite["title"]["en"] %>
+</h2>
+<% if params[:annotations].to_i == 1 %>
+  <h3>
+    <%= favourite["notes"] %>
+  </h3>
+  <h4>
+    <%= favourite["keywords"] %>
+  </h4>
+<% end %>

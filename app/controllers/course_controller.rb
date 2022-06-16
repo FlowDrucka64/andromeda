@@ -48,7 +48,7 @@ class CourseController < BaseController
   end
 
   def print
-    @favourites = load_favourite_bundle(current_user.course_favourites)
+    @favourites = load_favourite_bundle(current_user.course_favourites)['objects']
   end
 
 

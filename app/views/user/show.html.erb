@@ -29,9 +29,9 @@
     </td>
   </tr>
   <tr>
-    <td><%= link_to "[Staff reporting]", staff_print_path%></td>
-    <td><%= link_to "[Course reporting]", course_print_path%></td>
-    <td><%= link_to "[Project reporting]", project_print_path%></td>
-    <td><%= link_to "[Thesis reporting]", thesis_print_path%></td>
+    <td><%= link_to "[Staff reporting]", staff_print_path(:annotations => 1)%></td>
+    <td><%= link_to "[Course reporting]", course_print_path(:annotations => 1)%></td>
+    <td><%= link_to "[Project reporting]", project_print_path(:annotations => 1)%></td>
+    <td><%= link_to "[Thesis reporting]", thesis_print_path(:annotations => 1)%></td>
   </tr>
 </table>

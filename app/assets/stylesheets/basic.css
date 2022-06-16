@@ -94,9 +94,14 @@ input[type=submit].link:hover {
 }
 
 @media print{
+    body{
+        margin-left: 0;
+    }
     header{
         display: none;
-        margin-left: 0;
+    }
+    div.printnav{
+        display: none;
     }
 }
 

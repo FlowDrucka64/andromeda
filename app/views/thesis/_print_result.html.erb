@@ -1,0 +1,13 @@
+<% if favourite["title"]["en"].nil? %>
+  <h2> <%= favourite["title"]["de"] %></h2>
+<% else %>
+  <h2> <%= favourite["title"]["en"] %></h2>
+<% end %>
+<% if params[:annotations].to_i == 1 %>
+  <h3>
+    <%= favourite["notes"] %>
+  </h3>
+  <h4>
+    <%= favourite["keywords"] %>
+  </h4>
+<% end %>
