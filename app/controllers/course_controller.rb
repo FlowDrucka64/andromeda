@@ -54,6 +54,7 @@ class CourseController < BaseController
   helper_method :get_favourite_data
   helper_method :format_course_number
   helper_method :get_name
+  helper_method :get_fav_url
 
   private
 
@@ -106,6 +107,12 @@ class CourseController < BaseController
     obj["fav_id"] = favourite.id
     obj["notes"] = favourite.notes
     obj["keywords"] = favourite.keywords
+    obj["date"] = favourite["created_at"]
+    if obj["title"]["en"].nil?
+      obj["sort_title"] = obj["title"]["de"]
+    else
+      obj["sort_title"] = obj["title"]["en"]
+    end
     return obj
   end
 
@@ -133,6 +140,11 @@ class CourseController < BaseController
 
   def favourite_params
     params.require(:course_favourite).permit(:notes, :keywords)
+  end
+
+  #test
+  def get_fav_url()
+    return course_favourites_url(:p => 1)
   end
 
 end

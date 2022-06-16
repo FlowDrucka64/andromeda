@@ -49,6 +49,7 @@ class ProjectController < BaseController
 
   helper_method :is_favourite # used for case distinction when rendering detail information
   helper_method :get_favourite_data # used for rendering detail information
+  helper_method :get_fav_url
 
   private
 
@@ -98,6 +99,12 @@ class ProjectController < BaseController
     obj["fav_id"] = favourite.id
     obj["notes"] = favourite.notes
     obj["keywords"] = favourite.keywords
+    obj["date"] = favourite["created_at"]
+    if obj["title"]["en"].nil?
+      obj["sort_title"] = obj["title"]["de"]
+    else
+      obj["sort_title"] = obj["title"]["en"]
+    end
     return obj
   end
 
@@ -111,4 +118,9 @@ class ProjectController < BaseController
     params.require(:project_favourite).permit(:notes, :keywords)
   end
 
+
+  #test
+  def get_fav_url()
+    return project_favourites_url(:p => 1)
+  end
 end

@@ -12,6 +12,9 @@ class BaseController < ApplicationController
     logger.debug @results
   end
 
+  def sort
+    redirect_back(fallback_location: course_search_url)
+  end
 
   def favourites
   end
@@ -61,6 +64,8 @@ class BaseController < ApplicationController
     obj["fav_id"] = favourite.id
     obj["notes"] = favourite.notes
     obj["keywords"] = favourite.keywords
+    obj["date"] = favourite["created_at"]
+    obj["sort_title"] = obj["last_name"] + " " + obj["first_name"]
     return obj
   end
 
@@ -109,4 +114,8 @@ class BaseController < ApplicationController
     return response
   end
 
+  #test
+  def get_fav_url()
+    return staff_favourites_url(:p => 1)
+  end
 end

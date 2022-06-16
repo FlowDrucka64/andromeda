@@ -51,6 +51,7 @@ class StaffController < BaseController
 
   helper_method :is_favourite # used for case distinction when rendering detail information
   helper_method :get_favourite_data # used for rendering detail information
+  helper_method :get_fav_url
 
   private
 
@@ -99,6 +100,11 @@ class StaffController < BaseController
   # Strong typing for edit form
   def favourite_params
     params.require(:staff_favourite).permit(:notes, :keywords)
+  end
+
+  #test
+  def get_fav_url()
+    return staff_favourites_url(:p => 1)
   end
 
 end
