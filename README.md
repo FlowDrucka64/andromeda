@@ -121,5 +121,5 @@ https://tiss.tuwien.ac.at/api/dokumentation
 | 25.05.2022 |                                Favourites Sorting                                 |   2h   |
 | 15.06.2022 |                                Favourites Sorting                                 |   3h   |
 | 16.06.2022 |                                    Print page                                     |   6h   |
-| 17.06.2022 |                              Documentation, Cleanup                               |   3h   |
-|            |                                        SUM                                        |  53h   |
+| 17.06.2022 |                                   Highlighting                                    |   4h   |
+|            |                                        SUM                                        |  54h   |

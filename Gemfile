@@ -18,6 +18,8 @@ gem 'excon'
 #Used for translating umlauts
 gem 'rails-i18n', '>= 4.0.8'
 
+#jquery
+gem "jquery-rails"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
