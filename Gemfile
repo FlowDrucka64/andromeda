@@ -15,6 +15,7 @@ gem "sqlite3", "~> 1.4"
 #API pulls
 gem 'excon'
 
+#Used for translating umlauts
 gem 'rails-i18n', '>= 4.0.8'
 
 

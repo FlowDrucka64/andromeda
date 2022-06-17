@@ -1,38 +1,5 @@
 # Andromeda README
 
-<!--- This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ... --->
-
-# TODOS
-
-1. model-based validation
-
-2. printable list of favorites for each category with/out personal annotations
-
-3. full person report tht includes all available information (in the four categories) for one lecturer and on the report page provide an interactive highlightning function that is able to handle regular experessions
-
-
-
 # Student Data
 
 Names: Michael Winkler, Florian Drucker
@@ -45,9 +12,9 @@ Project Name: andromeda
 
 # Project Details
 
-Ruby Version: 3.0.3
+Ruby Version: ``3.0.3``
 
-Rails Version: 7.0.1
+Rails Version: ``7.0.1``
 
 
 # Setup
@@ -80,11 +47,11 @@ rake db:reset
 
 
 # Architecture
-For the main functionallities
+For the main functionalities
 
                                          application_controller
                                                   |
-                                             base_controller
+                             ________________ base_controller__________
                             /             /         |          \       \
                      fullreport_c.    staff_c.   thesis_c.  project_c.  course_c.
 
@@ -93,6 +60,14 @@ For Session and User management
                                             application_c.
                                              /         \
                                          session c.     user_c.
+
+
+# Custom gems used
+
+- ``EXCON`` for API pulls
+- ``rails-i18n`` for translation of umlauts
+
+
 # TISS API doc
 
 https://tiss.tuwien.ac.at/api/dokumentation

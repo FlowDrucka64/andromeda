@@ -11,10 +11,8 @@ class BaseController < ApplicationController
     end
   end
 
-  def sort
-    redirect_back(fallback_location: course_search_url)
-  end
 
+  # Favourite functionality used by every of the 4 main controllers
   def favourites
   end
 
@@ -23,17 +21,12 @@ class BaseController < ApplicationController
     @result = api_fetch(params[:id])
   end
 
+  # Functionality to provide a printable report of the 4 favourite lists
   def print
   end
 
 
-  # Fetch a staff member with tiss_id from TISS API
-  def api_fetch(id)
-    url = fetch_url + id.to_s
-    return Rails.cache.fetch(url, expires_in: 12.hours) do
-      fetch_parse(Excon.get(url)) #executed on cache miss
-    end
-  end
+
 
 
   private
@@ -45,10 +38,20 @@ class BaseController < ApplicationController
   #
   # ############################################################################################
 
+  # Fetch a staff member with tiss_id from TISS API
+  # parsing the result with fetch_parse which has to be overwritten if the result is not a JSON
+  def api_fetch(id)
+    url = fetch_url + id.to_s
+    return Rails.cache.fetch(url, expires_in: 12.hours) do
+      fetch_parse(Excon.get(url)) #executed on cache miss
+    end
+  end
+
   # This needs to be overridden by every controller using api_fetch
   def fetch_url
   end
 
+  # Parse function used by api_fetch
   # Parse as JSON per default - override if needed
   def fetch_parse(http_result)
     JSON.parse http_result.body
@@ -107,8 +110,6 @@ class BaseController < ApplicationController
       search_transform(search_parse(Excon.get(url)))#executed on cache miss
     end
   end
-
-
 
   # adds the information of the needed page_count to the object
   def search_transform(response)

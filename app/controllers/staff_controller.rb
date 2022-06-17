@@ -2,7 +2,7 @@
 # "extending" from the BaseController
 class StaffController < BaseController
 
-  # Showing the current user's favourites
+  # display of the users' favourites
   def favourites
     @favourites = load_favourite_bundle(current_user.staff_favourites)
     # "calculation" of the results to display on the current page of the results
@@ -49,29 +49,24 @@ class StaffController < BaseController
     end
   end
 
+  # print functionality to provide a printable list of all favourites
   def print
     @favourites = load_favourite_bundle(current_user.staff_favourites)['objects']
   end
 
   helper_method :is_favourite # used for case distinction when rendering detail information
   helper_method :get_favourite_data # used for rendering detail information
-  helper_method :get_fav_url
+  helper_method :get_fav_url # override from base since the url is different for each controller, needed for sorting
 
   private
 
-  # override of base_controller
-  def fetch_url
-    return BASE_API_URL + STAFF_FETCH_URI
-  end
 
-  # override of base_controller
-  def search_url
-    return BASE_API_URL + STAFF_SEARCH_URI
-  end
-
-  def search_params
-    "&max_treffer=" + MAX_HITS.to_s
-  end
+  # ############################################################################################
+  #
+  #     Helper methods here
+  #     Helpers used for displaying data in the HTML
+  #
+  # ############################################################################################
 
   # checks if the staff member with given tiss_id is a favourite of the current user
   def is_favourite(tiss_id)
@@ -89,6 +84,12 @@ class StaffController < BaseController
     return nil
   end
 
+  # override from base since the url is different for each controller
+  # this is needed in order to do all sorting in a single "master" partial (_favourites.html.erb)
+  def get_fav_url
+    return staff_favourites_url(:p => 1)
+  end
+
   # helper for displaying the name of a favourite given the database id of it
   def get_fav_name(fav_id)
     ret = "Name not found"
@@ -100,15 +101,41 @@ class StaffController < BaseController
     ret
   end
 
+  # ############################################################################################
+  #
+  #     DB and API pull methods here
+  #     These methods are used for getting the data from the API and the DB
+  #     and formatting it so that it can be presented in the HTML
+  #
+  # ############################################################################################
+
+  # override of base_controller
+  def fetch_url
+    return BASE_API_URL + STAFF_FETCH_URI
+  end
+
+  # override of base_controller
+  def search_url
+    return BASE_API_URL + STAFF_SEARCH_URI
+  end
+
+  # override of base_controller
+  def search_params
+    "&max_treffer=" + MAX_HITS.to_s
+  end
+
+  # ############################################################################################
+  #
+  #     Typing methods here
+  #     These methods are used for strong typing of user input data
+  #
+  # ############################################################################################
 
   # Strong typing for edit form
   def favourite_params
     params.require(:staff_favourite).permit(:notes, :keywords)
   end
 
-  #test
-  def get_fav_url()
-    return staff_favourites_url(:p => 1)
-  end
+
 
 end

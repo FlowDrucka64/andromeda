@@ -1,5 +1,5 @@
 <% if not @favourites.empty? %>
-  <%= form_with(url: get_fav_url(), method: :get) do |f| %>
+  <%= form_with(url: get_fav_url, method: :get) do |f| %>
     <%= f.select :sort, [['Title A-Z',1],['Date',2],['Date Reverse',3]], :selected => params[:sort] %>
     <%= f.submit "Sort", :class => "small", :name => nil%>
     <%= f.hidden_field(:p,:value => 1)  %>
