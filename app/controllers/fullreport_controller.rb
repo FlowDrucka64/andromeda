@@ -59,7 +59,6 @@ class FullreportController < BaseController
   # search for all projects associated with a given lecturer_name
   def project_search(lecturer_name)
     url = BASE_API_URL+PROJECT_SEARCH_URI+lecturer_name
-    logger.info(url)
     return Rails.cache.fetch(url, expires_in: 12.hours) do
       JSON.parse(Excon.get(url).body)#executed on cache miss
     end
@@ -94,7 +93,6 @@ class FullreportController < BaseController
   # search for all projects associated with a given lecturer_name
   def thesis_search(lecturer_name)
     url = BASE_API_URL+THESIS_SEARCH_URI+lecturer_name
-    logger.info(url)
     return Rails.cache.fetch(url, expires_in: 12.hours) do
       JSON.parse(Excon.get(url).body)#executed on cache miss
     end
@@ -103,7 +101,6 @@ class FullreportController < BaseController
   # fetch detail data for a given thesis id
   def thesis_detail_fetch(id)
     url = BASE_API_URL+THESIS_FETCH_URI+id.to_s
-    logger.info(url)
     return Rails.cache.fetch(url, expires_in: 12.hours) do
       (Hash.from_xml(Excon.get(url).body.to_s)["tuvienna"]["thesis"])#executed on cache miss
     end
