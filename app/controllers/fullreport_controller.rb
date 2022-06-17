@@ -4,8 +4,8 @@ class FullreportController < BaseController
   def show
     @person = api_fetch(params[:id])
     @courses = course_fetch(@person["oid"])["course"]
-    @projects = project_detail_fetch_all(I18n.transliterate(@person["last_name"]))
-    @thesis = thesis_detail_fetch_all(I18n.transliterate(@person["last_name"]))
+    @projects = project_detail_fetch_all(I18n.transliterate(@person["last_name"]) + " " + I18n.transliterate(@person["first_name"]))
+    @thesis = thesis_detail_fetch_all(I18n.transliterate(@person["last_name"]) + " " + I18n.transliterate(@person["first_name"]))
   end
 
   helper_method :staff_is_favourite # used for case distinction when rendering detail information
