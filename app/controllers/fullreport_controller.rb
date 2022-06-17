@@ -1,5 +1,6 @@
 class FullreportController < BaseController
 
+  # method to display the fullreport of a given lecturer
   def show
     @person = api_fetch(params[:id])
     @courses = course_fetch(@person["oid"])["course"]
@@ -10,7 +11,7 @@ class FullreportController < BaseController
   helper_method :staff_is_favourite # used for case distinction when rendering detail information
   helper_method :staff_get_favourite_data # used for rendering detail information
 
-  helper_method :format_course_number
+  helper_method :format_course_number # formatting the course number so it's seperated by a .
   helper_method :course_is_favourite # used for case distinction when rendering detail information
   helper_method :course_get_favourite_data # used for rendering detail information
 
@@ -22,17 +23,30 @@ class FullreportController < BaseController
 
   private
 
-  #------------------------------------Course stuff-----------------------------------------------------
+  # ############################################################################################
+  #
+  #     Course stuff
+  #     fetching course data related to a specific lecturer
+  #
+  # ############################################################################################
 
+  # Fetch all courses associated with a given lecturer id
   def course_fetch(lecturer_id)
     url = BASE_API_URL+COURSE_SEARCH_BY_LECTURER_URI+lecturer_id.to_s
-    logger.info(url)
     return Rails.cache.fetch(url, expires_in: 12.hours) do
       (Hash.from_xml(Excon.get(url).body.to_s)["tuvienna"])#executed on cache miss
     end
   end
 
-  #------------------------------------Project stuff-----------------------------------------------------
+  # ############################################################################################
+  #
+  #     Project stuff
+  #     Fetching project data related to a specific lecturer
+  #
+  # ############################################################################################
+
+  # search for all projects associated with lecturer_name first
+  # then fetch all the detail information for those and combine them into a list
   def project_detail_fetch_all(lecturer_name)
     projects = project_search(lecturer_name)["results"]
     ret = []
@@ -42,7 +56,7 @@ class FullreportController < BaseController
     return ret
   end
 
-
+  # search for all projects associated with a given lecturer_name
   def project_search(lecturer_name)
     url = BASE_API_URL+PROJECT_SEARCH_URI+lecturer_name
     logger.info(url)
@@ -51,6 +65,7 @@ class FullreportController < BaseController
     end
   end
 
+  # fetch detail data for a given project id
   def project_detail_fetch(id)
     url = BASE_API_URL + PROJECT_FETCH_URI+  id.to_s
     return Rails.cache.fetch(url, expires_in: 12.hours) do
@@ -58,8 +73,15 @@ class FullreportController < BaseController
     end
   end
 
+  # ############################################################################################
+  #
+  #     Thesis stuff
+  #     Fetching thesis data related to a specific lecturer
+  #
+  # ############################################################################################
 
-  #------------------------------------Thesis stuff-----------------------------------------------------
+  # search for all thesis associated with lecturer_name first
+  # then fetch all the detail information for those and combine them into a list
   def thesis_detail_fetch_all(lecturer_name)
     thesis = thesis_search(lecturer_name)["results"]
     ret = []
@@ -69,6 +91,7 @@ class FullreportController < BaseController
     return ret
   end
 
+  # search for all projects associated with a given lecturer_name
   def thesis_search(lecturer_name)
     url = BASE_API_URL+THESIS_SEARCH_URI+lecturer_name
     logger.info(url)
@@ -77,6 +100,7 @@ class FullreportController < BaseController
     end
   end
 
+  # fetch detail data for a given thesis id
   def thesis_detail_fetch(id)
     url = BASE_API_URL+THESIS_FETCH_URI+id.to_s
     logger.info(url)
@@ -85,14 +109,17 @@ class FullreportController < BaseController
     end
   end
 
-  #------------------------------------Staff stuff-----------------------------------------------------
+  # ############################################################################################
+  #
+  #     Staff stuff
+  #     Fetching staff data related to a specific lecturer
+  #
+  # ############################################################################################
+
+
   # override of base_controller
   def fetch_url
     return BASE_API_URL + STAFF_FETCH_URI
-  end
-
-  def format_course_number(course_number)
-    return course_number.dup.insert(3,".")
   end
 
   # override of base_controller
@@ -100,11 +127,23 @@ class FullreportController < BaseController
     return BASE_API_URL + STAFF_SEARCH_URI
   end
 
+  # override of base_controller
   def search_params
     "&max_treffer=" + MAX_HITS.to_s
   end
 
-  #------------------------------------Database stuff-----------------------------------------------------
+  # formatting the course number so it's seperated by a .
+  def format_course_number(course_number)
+    return course_number.dup.insert(3,".")
+  end
+
+  # ############################################################################################
+  #
+  #     Database stuff
+  #     Checking if a given course/thesis/project is a favourite and
+  #     pulling persisted data for favourites from the DB
+  #
+  # ############################################################################################
 
   # checks if the staff member with given tiss_id is a favourite of the current user
   def staff_is_favourite(tiss_id)
@@ -114,6 +153,7 @@ class FullreportController < BaseController
     return false
   end
 
+  # checks if a given course id is within the favourites of the current user
   def course_is_favourite(id)
     current_user.course_favourites.each do |f|
       return true if f["course_number"].to_s+"-"+f["semester"] == id

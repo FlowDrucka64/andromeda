@@ -11,7 +11,6 @@ class BaseController < ApplicationController
     end
   end
 
-
   # Favourite functionality used by every of the 4 main controllers
   def favourites
   end
