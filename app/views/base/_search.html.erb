@@ -21,20 +21,20 @@
     <% end %>
   </ul>
 
-
   <% if @results["total_results"] > PAGE_ENTRY_COUNT %>
     <tr>
       <% if params[:p].to_i > 1 %>
-        <%= link_to "[Previous]", staff_search_url(q: params[:q], p: params[:p].to_i - 1) %>
+        <%= link_to "[Previous]", search_url+"?q="+params[:q].to_s+"&p="+(params[:p].to_i - 1).to_s %>
       <% end %>
       <% for i in 1..@results["page_count"] do %>
-        <%= link_to "[Page #{i}]", staff_search_url(q: params[:q], p: i) %>
+        <%= link_to "[Page #{i}]", search_url+"?q="+params[:q].to_s+"&p="+i.to_s %>
       <% end %>
       <% if params[:p].to_i < @results["page_count"] %>
-        <%= link_to "[Next]", staff_search_url(q: params[:q], p: params[:p].to_i + 1) %>
+        <%= link_to "[Next]", search_url+"?q="+params[:q].to_s+"&p="+(params[:p].to_i + 1).to_s %>
       <% end %>
     </tr>
   <% end %>
+
 
 
 <% else %>
