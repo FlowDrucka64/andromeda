@@ -2,14 +2,13 @@
 
 
 <% if not @results.empty? %>
-  <h2>
-    <%= @results["total_results"] %> total result<%= @results["total_results"] > 1 ? "s" : "" %>!
-  </h2>
 
-
+  <h3>
+    Page <%= params[:p] %>
+  </h3>
   <% if @results["total_results"] > MAX_HITS %>
     <h3>
-      To save some traffic I'll only show you <%= @results["results"].length %> results tho :)
+      To save some traffic the API only shows <%= @results["results"].length %> results
     </h3>
   <% end %>
 

@@ -71,9 +71,9 @@
   <% end %>
 </div>
 <div class="block">
-  <%= link_to "[Courses]" %>
-  <%= link_to "[Projects]" %>
-  <%= link_to "[Theses]" %>
+  <%= link_to "[Staff]", staff_search_path %>
+  <%= link_to "[Courses]", course_search_path %>
+  <%= link_to "[Projects]", project_search_path %>
   <% unless is_favourite(params[:id]) %>
     <%= form_tag(thesis_create_path, method: :post) do %>
       <%= hidden_field_tag(:id, params[:id]) %>

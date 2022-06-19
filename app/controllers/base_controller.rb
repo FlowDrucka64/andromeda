@@ -8,6 +8,10 @@ class BaseController < ApplicationController
       @results = api_search(I18n.transliterate(params[:q]))
       # "calculation" of the results to display on the current page of the results
       @results["result_slice"] = @results["results"].slice(PAGE_ENTRY_COUNT * (params[:p].to_i - 1), PAGE_ENTRY_COUNT)
+      logger.info(@results["result_slice"])
+      logger.info(@results["results"])
+      logger.info(@results)
+      logger.info(PAGE_ENTRY_COUNT)
     end
   end
 
