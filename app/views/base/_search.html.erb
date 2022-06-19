@@ -27,7 +27,11 @@
         <%= link_to "[Previous]", search_url+"?q="+params[:q].to_s+"&p="+(params[:p].to_i - 1).to_s %>
       <% end %>
       <% for i in 1..@results["page_count"] do %>
-        <%= link_to "[Page #{i}]", search_url+"?q="+params[:q].to_s+"&p="+i.to_s %>
+        <% if i != params[:p].to_i %>
+          <%= link_to "[Page #{i}]", search_url+"?q="+params[:q].to_s+"&p="+i.to_s %>
+        <% else %>
+          <%= link_to "[Page #{i}]", search_url+"?q="+params[:q].to_s+"&p="+i.to_s, class:"currentPage" %>
+        <% end %>
       <% end %>
       <% if params[:p].to_i < @results["page_count"] %>
         <%= link_to "[Next]", search_url+"?q="+params[:q].to_s+"&p="+(params[:p].to_i + 1).to_s %>

@@ -9,11 +9,16 @@ a{
     text-decoration: none; /* no underline */
 }
 
+currentPage{
+    color:red;
+}
+
 a:hover{
     display: inline;
     color: olive;
     text-decoration: none; /* no underline */
 }
+
 
 img {
     width: 30%;
