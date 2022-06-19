@@ -30,7 +30,7 @@
         <% if i != params[:p].to_i %>
           <%= link_to "[Page #{i}]", search_url+"?q="+params[:q].to_s+"&p="+i.to_s %>
         <% else %>
-          <%= link_to "[Page #{i}]", search_url+"?q="+params[:q].to_s+"&p="+i.to_s, class:"currentPage" %>
+          <%= link_to "[Page #{i}]", search_url+"?q="+params[:q].to_s+"&p="+i.to_s, class:'a currentPage' %>
         <% end %>
       <% end %>
       <% if params[:p].to_i < @results["page_count"] %>

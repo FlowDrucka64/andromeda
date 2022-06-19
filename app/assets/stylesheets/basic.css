@@ -9,8 +9,9 @@ a{
     text-decoration: none; /* no underline */
 }
 
-currentPage{
-    color:red;
+a.currentPage{
+    color:olive;
+    text-decoration: underline;
 }
 
 a:hover{
